@@ -12,10 +12,8 @@ Jag tror att den är bra/väldigt bra. Allt går att lösa. Visst, jag använder
 ##Kodeditor
 PHPStorm för PHP, Netbeans eller Eclipse för Java. JavaScript i samma som det backendspråk jag skriver i för tillfället. Sublime Text för att göra "snabba saker".
 
-
-
-*(Jag smygstartade kursen med de gamla instruktionerna)*
 ##Uppgift<br/>
+*(Jag smygstartade kursen med de gamla instruktionerna)*
 Gå igenom John Resigs [JavaScript-övningar](http://ejohn.org/apps/learn).
 
 **Kommentarer**<br/>
