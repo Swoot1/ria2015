@@ -1,11 +1,4 @@
----
-layout: post
-title:  "Presentation"
-date:   2015-11-03 21:20
-categories: ria
-comments: true
----
-
+##Om
 Hej! Jag heter Elin, är 25 år gammal och har varit utvecklare i några år. Sedan 2 månader tillbaka jobbar jag som Java- och JavaScriptutvecklare i Göteborg. På jobbet arbetar jag bl.a. med AngularJS. Innan det jobbade jag som PHP- och JavasScriptutvecklare i Växjö från det att jag slutade på Webbprogrammeringsprogrammet på Linnéuniversitetet 2012.
 
 Anledningen till att jag går kursen är för att vidareutbilda mig och bli bättre på JavaScript.
@@ -18,6 +11,8 @@ Jag tror att den är bra/väldigt bra. Allt går att lösa. Visst, jag använder
 
 ##Kodeditor
 PHPStorm för PHP, Netbeans eller Eclipse för Java. JavaScript i samma som det backendspråk jag skriver i för tillfället. Sublime Text för att göra "snabba saker".
+
+
 
 *(Jag smygstartade kursen med de gamla instruktionerna)*
 ##Uppgift<br/>
