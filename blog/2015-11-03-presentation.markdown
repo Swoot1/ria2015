@@ -1,26 +1,13 @@
-##Om
-Hej! Jag heter Elin, är 25 år gammal och har varit utvecklare i några år. Sedan 2 månader tillbaka jobbar jag som Java- och JavaScriptutvecklare i Göteborg. På jobbet arbetar jag bl.a. med AngularJS. Innan det jobbade jag som PHP- och JavasScriptutvecklare i Växjö från det att jag slutade på Webbprogrammeringsprogrammet på Linnéuniversitetet 2012.
+##About
+Hello! My name is Elin, I'm 25 years old and have been a developer for some years. I recently moved to Gothenburg and since then I've been working as a Java and JavaScript developer. Before moving to Gothenburg I was living in Växjö programming in PHP and JavaScript. I used to study at Linnaeus University back in 2010-2012.
 
-Anledningen till att jag går kursen är för att vidareutbilda mig och bli bättre på JavaScript.
+The reason I'm taking the course is to broaden my JavaScript horizon.
 
-##Förväntningar på kursen
-Jag ser framförallt fram emot att börja använda och lära mig React för att jag inte skrivit funktionell kod innan och att lära mig Travis.
+##Expectations
+I'm looking forward to learning functional programming.
 
-##Min JavaScript idag 
-Jag tror att den är bra/väldigt bra. Allt går att lösa. Visst, jag använder ramverk som AngularJS och BackboneJS så ibland kanske jag kommer ifrån vanilla JS men det mesta finns där i bakhuvudet.
+##My JavaScript today
+I see it as good/very good. Everything's solveable and for the rest there's Google and StackOverflow. Maybe I've forgotten some of the vanilla JS while using frameworks such as BackbonJS and AngularJS but most of it's up there somewhere in my head.
 
-##Kodeditor
-PHPStorm för PHP, Netbeans eller Eclipse för Java. JavaScript i samma som det backendspråk jag skriver i för tillfället. Sublime Text för att göra "snabba saker".
-
-
-
-*(Jag smygstartade kursen med de gamla instruktionerna)*
-##Uppgift<br/>
-Gå igenom John Resigs [JavaScript-övningar](http://ejohn.org/apps/learn).
-
-**Kommentarer**<br/>
-Jag missade hur något closure fungerar och kom inte ihåg vilken funktions-uppskapning som det inte spelade någon roll var i koden jag gör och ändå går att anropa innan den står i koden (jmf. window.fn = function(.., var fn = function(.. och fn = function(..).  
-
-[77:an](http://ejohn.org/apps/learn/#77) med prototype-arv hade jag helt glömt bort hur man gör efter att mest ha jobbat med BackboneJS och AngularJS. 
-
-Men på det stora hela? Klart godkänt! Det mesta finns kvar i minnet eller kunde snabbt ruskas fram.
+##Editor
+PHPStorm for PHP, Netbeans or Eclipse for Java. JavaScript in the same editor that I'm writing the backend language for the current project. Sublime Text for "quick things".
