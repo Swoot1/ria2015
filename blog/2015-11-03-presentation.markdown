@@ -7,7 +7,7 @@ The reason I'm taking the course is to broaden my JavaScript horizon.
 I'm looking forward to learning functional programming.
 
 ##My JavaScript today
-I see it as good/very good. Everything's solveable and for the rest there's Google and StackOverflow. Maybe I've forgotten some of the vanilla JS while using frameworks such as BackbonJS and AngularJS but most of it's up there somewhere in my head.
+I see it as good/very good. Everything's solveable and for the rest there's Google and StackOverflow. Maybe I've forgotten some of the vanilla JS while using frameworks such as BackboneJS and AngularJS but most of it's up there somewhere in my head.
 
 ##Editor
 PHPStorm for PHP, Netbeans or Eclipse for Java. JavaScript in the same editor that I'm writing the backend language for the current project. Sublime Text for "quick things".
