@@ -11,5 +11,3 @@ And all you want to do is to go back to the original code in the original repo a
 Assuming you're using the branch gh-pages in your fork.
 
 Snagged from [StackOverflow](http://stackoverflow.com/a/9646323/1075304).
-
-Today I messed up.
