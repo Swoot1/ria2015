@@ -1,10 +1,10 @@
 ##ECMAScript6
 Since I had to read up on the new ECMAScript6 functionality I thought I might as well post my findings here for someone else to read as well.
 
-###What is ECMAScript 6
+###What is ECMAScript?
 >[ECMAScript is a standard. JavaScript and ActionScript are well-known implementations of the ECMAScript standard.]("http://stackoverflow.com/a/4269168/1075304")
 
-###What's new?
+###What's new in ECMAScript 6?
 
 ####Arrow functions
 Makes it possible to write anonymous function with less code and makes *this* lexical.
