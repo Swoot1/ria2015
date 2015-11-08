@@ -34,7 +34,7 @@ in a .js file loads the react module into our variable React, probably using mag
 ##The --debug flag
 The "--debug" flag tells Browserify to create [source maps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/). It  basically links our bundled (and sometimes minified and uglified) code to the original source files making it a whole lot easier to debug.
 
-[Here]("https://github.com/substack/node-browserify#usage") are some other flags you can use with Browserify.
+[Here](https://github.com/substack/node-browserify#usage) are some other flags you can use with Browserify.
 
 ##The -t flag
 The "-t" flag is short for "-tranform" and it's what makes your files with HTML-syntax convert into files JavaScript-syntax for the HTML. 
@@ -52,10 +52,10 @@ Meaning that if you want to write all you HTML with React's JavaScript syntax fr
 ##[reactify --es6]
 "[reactify --es6]" is an "option for the -t flag" it lets you write some ECMAScript6 syntax constructs (arrow functions, rest params, templates, object short notation and classes) that will be transformed into ECMAScript5 syntax which is more widely supported than ECMAScript6. 
 
-(Current browser support for [ECMAScript6](("https://kangax.github.io/compat-table/es6/") and for [ECMAScript5](http://kangax.github.io/compat-table/es5/)).
+(Current browser support for [ECMAScript6](https://kangax.github.io/compat-table/es6/) and for [ECMAScript5](http://kangax.github.io/compat-table/es5/)).
 
 ##src/main.js > bundle.js
-"src/main.js > bundle.js" says "take all the required modules from the file main.js and the code in the file main.js, concatenate all the source code into a new file named "bundle.js" and put it in the root of the project". Then, instead of adding all your dependencies into script tags in your index.html you only need to reference bundle.js which already contains all of them. [Example]("https://github.com/substack/node-browserify#example"). 
+"src/main.js > bundle.js" says "take all the required modules from the file main.js and the code in the file main.js, concatenate all the source code into a new file named "bundle.js" and put it in the root of the project". Then, instead of adding all your dependencies into script tags in your index.html you only need to reference bundle.js which already contains all of them. [Example](https://github.com/substack/node-browserify#example). 
 
 Bundling all you .js files has many advantages such as:
 * Your page will load faster since you only need to fetch one .js file. 
