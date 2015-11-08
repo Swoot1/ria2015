@@ -18,7 +18,7 @@ or
 
     git checkout gh-pages
 
-if you want to use the gh-pages all the time.
+if you want to use the gh-pages all the time. Which you might as well do.
 
 
 The instructions will tell you to run
@@ -32,5 +32,5 @@ but you should use
 since David is using the gh-pages branch and doesn't have a master branch in the project.
 
 ##Word of caution
-We're many people working on the project which means there'll be a lot of pull request which results in the repo changing a lot. Remember to sync your fork before making a pull request. I forgot and it ended up in a merge conflict since people had made new pull requests between the time me forking the repo and creating a pull request to the repo.
+We're many people working on the project which means there'll be a lot of pull request which results in the repo changing a lot. Remember to sync your fork before making a pull request. I forgot and it ended up in a merge conflict since people had made new pull requests between the time me forking the repo and me creating a pull request to the repo.
     
