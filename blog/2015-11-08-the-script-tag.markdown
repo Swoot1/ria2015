@@ -9,16 +9,6 @@ in his package.json
 To run the build script use:
 
     npm run build
-    
-or
-
-    npm run-script build
-    
-or simply
-
-    npm run
-    
-which runs all scripts under the script property.
 
 This generates the file "bundle.js".
 
