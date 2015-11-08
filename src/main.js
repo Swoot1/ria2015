@@ -7,5 +7,5 @@
     var React = require('react'),
         ReactDOM = require('react-dom');
 
-    ReactDOM.render(<h1>Hello, world</h1>, document.getElementById('root'));
+    ReactDOM.render(<h1 className="justforshow">Hello you gorgeous</h1>, document.getElementById('root'));
 }());
