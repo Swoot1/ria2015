@@ -27,7 +27,7 @@ The "--debug" flag tells Browserify to create [source maps](http://www.html5rock
 [Here](https://github.com/substack/node-browserify#usage) are some other flags you can use with Browserify.
 
 ##The -t flag
-The "-t" flag is short for "-tranform" and it's what makes your files with HTML-syntax convert into files JavaScript-syntax for the HTML. 
+The "-t" flag is short for "-transform" and it's what makes your files with HTML-syntax convert into files JavaScript-syntax for the HTML. 
 
 I.e:
 
