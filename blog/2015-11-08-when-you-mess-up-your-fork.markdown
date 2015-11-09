@@ -11,3 +11,9 @@ And all you want to do is to go back to the original code in the original repo a
 Assuming you're using the branch gh-pages in your fork.
 
 Snagged from [StackOverflow](http://stackoverflow.com/a/9646323/1075304).
+
+---
+
+#### Comments
+
+[David](http://blog.krawaller.se/riaguild2015/#/member/krawaller): When doing this for the guild, the first line in Elin's instructions above would read `git remote add upstream https://github.com/krawaller/riaguild2015.git`.
