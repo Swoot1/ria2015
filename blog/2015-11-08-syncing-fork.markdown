@@ -33,4 +33,8 @@ since David is using the gh-pages branch and doesn't have a master branch in the
 
 ##Word of caution
 We're many people working on the project which means there'll be a lot of pull request which results in the repo changing a lot. Remember to sync your fork before making a pull request. I forgot and it ended up in a merge conflict since people had made new pull requests between the time me forking the repo and me creating a pull request to the repo.
-    
+
+---
+#### Comments
+
+[David](http://blog.krawaller.se/riaguild2015/#/member/krawaller): Wise words, so people, take note and heed! A note on merge conflicts; this will only happen if the original repo was updated since after you made your fork *and you've now update the same file*. If you've only updated something else then it doesn't matter if there's newer changes elsewhere in the upstreams repo, Git will take care of that. So if you only edit your own json-file, there will never be a merge conflict. Unless I've been in there censoring of course...
