@@ -1,12 +1,12 @@
 ##Static and the difference between props and state
 
-In React there're three common buzz word. Well actually there's many but I'm just going to write about three of them: static, props and state. It's basically about if your render function in you component should be static or dynamic and if it's dynamic where should the dynamic data come form.
+In React there're three common buzz word. Well actually there's many but I'm just going to write about three of them: static, props and state. It's basically about if your render function in you component should be static or dynamic and if it's dynamic where should the dynamic data come from.
 
 
 ###Static
 If you've tried out the [hello world example](https://facebook.github.io/react/docs/getting-started.html#quick-start-without-npm) on the react home page you already know what static is. It's static. It doesn't change and you can't manipulate it. Everytime you call render you get the same result. 
 
-Like this, check ut the render function.
+Like this, check out the render function.
 
     //myChildComponent.js
     (function(){
