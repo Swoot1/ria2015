@@ -1,11 +1,11 @@
-##A simple redirect, how hard can it be
+##A Simple Redirect, How Hard Can It Be
 
 Actually it's not that hard but it's not that well documented (or maybe I was looking in the wrong places).
 
 Anyway, this is how you do it.
 
     var React = require("react"),
-    Navigation = require('react-router').Navigation; // We're going to need this
+        Navigation = require('react-router').Navigation; // We're going to need this
 
     var SomeComponentName = React.createClass({
 
