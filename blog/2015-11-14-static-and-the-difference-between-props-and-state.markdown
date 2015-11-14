@@ -110,7 +110,7 @@ State is pretty much the same as props except this time the parent can't decide 
 
         var MyChildComponent = React.createClass({
 
-            // This is the initial state. They'll be set until they're overwritten by a call to setState with the same properties.
+            // This is the initial state. They'll be set until they're overwritten by a call to setState with the same property names.
             getInitialState: function(){
                 return {name: 'you'};
             },
