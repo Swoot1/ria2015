@@ -10,7 +10,9 @@ Now I can call:
 
 from the terminal once and watchify will keep an eye on my .js files (currently only my main.js file) and output their content and their dependencies to bundle.js.
 
-I did the same thing for my less files but with a npm called catw. This went into the script tag in the package.json.
+I did the same thing for my less files but with a npm called catw. 
+
+This went into the script tag in the package.json.
 
     "watch-css": "catw -wvc 'lessc --clean-css -' 'styles/styles.less' > dist/styles/styles.min.css"
     

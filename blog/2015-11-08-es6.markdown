@@ -62,11 +62,11 @@ Say we have a sandwich function that we want to make sandwiches but we don't kno
     
 We can call the function with
 
-    makeSandwich('cucumber', 'cheese');
-    makeSandwich('turkey', 'mayo', 'cheese');
+    makeSandwich('cheese');
+    makeSandwich('turkey', 'mayo');
     makeSandwich('bacon', 'bacon', 'bacon');
 
-and the function couldn't care less about how many parameters you call it with.
+and the function couldn't care less about how many arguments you call it with.
 
 More on rest params [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
