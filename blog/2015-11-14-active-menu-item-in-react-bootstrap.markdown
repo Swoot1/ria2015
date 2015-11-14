@@ -17,9 +17,9 @@ Now I've done that but why's the home link (/) always active? :/
 It's because the router is always matching the / in the path whether you're visiting mycoolpage.com/#/ (that's right), mycoolpage.com/#/members (that's wrong) or mycoolpage.com/#/anyotherroute since the / is present in the beginning in all of them.
 
 ###Solution
-Add a third parameter to the isActive function that says if the path only should match / followed by nothing and not the other paths. 
+Add a third argument to the isActive function that says if the path only should match / followed by nothing and not the other paths. 
 
-This parameter should only be true for the home link (/).
+This argument should only be true for the home link (/).
 
 To make a long short story short. Require the bootstrap elements just like I do below use them in the menuitem code block and to the important part go to the first code block and look for a comment in capitals in the render function. 
 
