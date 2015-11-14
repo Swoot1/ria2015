@@ -14,7 +14,7 @@ Making React Router's component History a mixin lets us call the isActive functi
 Now I've done that but why's the home link (/) always active? :/
 
 ###Answer!
-It's because the router is always matching the / in the path wether you're visiting mycoolpage.com/#/ (that's right), mycoolpage.com/#/members (that's wrong) or mycoolpage.com/#/anyotherroute since the / is present in the beginning in all of them.
+It's because the router is always matching the / in the path whether you're visiting mycoolpage.com/#/ (that's right), mycoolpage.com/#/members (that's wrong) or mycoolpage.com/#/anyotherroute since the / is present in the beginning in all of them.
 
 ###Solution
 The solution is to add a third parameter to the isActive function that says if the path only should match / followed by nothing and not the other paths. 
@@ -80,8 +80,8 @@ To make a long short story short. Require the bootstrap elements just like I do 
     });
 
     module.exports = Menu;
-    
-    
+
+
     // MENU ITEM
     var React = require('react')
     NavItem = require('react-bootstrap').NavItem;
