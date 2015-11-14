@@ -1,7 +1,12 @@
 ##Static and the difference between props and state
 
+In React there're three common buzz word. Well actually there's many but I'm just going to write about three of them: static, props and state. It's basically about if your render function in you component should be static or dynamic and if it's dynamic where should the dynamic data come form.
+
+
 ###Static
-If you've tried out the [hello world example](https://facebook.github.io/react/docs/getting-started.html#quick-start-without-npm) on the react home page you already know what static is. It's static. It doesn't change and you can't manipulate it. Everytime you call render you get the same result.
+If you've tried out the [hello world example](https://facebook.github.io/react/docs/getting-started.html#quick-start-without-npm) on the react home page you already know what static is. It's static. It doesn't change and you can't manipulate it. Everytime you call render you get the same result. 
+
+Like this, check ut the render function.
 
     //myChildComponent.js
     (function(){
@@ -12,7 +17,7 @@ If you've tried out the [hello world example](https://facebook.github.io/react/d
         var MyChildComponent = React.createClass({
 
             render() {
-                return(<h1>Hello World I'm Static</h1>);
+                return(<h1>Hello World I'm Static</h1>); // This is static and doesn't change.
             }
         });
 
@@ -50,7 +55,9 @@ If you've tried out the [hello world example](https://facebook.github.io/react/d
 This example code will always output "Hello World I'm Static" as an h1 tag.
 
 ###Props
-Use it when you want to manipulate the render output from the outside of the component. By sending in arguments to the component you get a dynamic component and the result from the render method can vary depending on your input. The props can not be changed by the component receiving them.
+Use it when you want to manipulate the render output from the outside of the component. By sending in arguments to the component you get a dynamic component and the result from the render method can vary depending on your input. The props shouln't be changed by the component receiving them.
+
+Look at the comments!
 
     //myChildComponent.js
     (function(){
@@ -90,7 +97,7 @@ Use it when you want to manipulate the render output from the outside of the com
         ReactDOM.render(<MyChildComponent name="Santa"/>, document.getElementById('root'));
     }());
     
-If the MyChildComponent is called without props from the parent component it will use the props that's returned from the 'getDefaultProps function' of course it will try to use the props sent in from the parent first if any.
+If the MyChildComponent is called without props from the parent component it will use the props that's returned from the 'getDefaultProps function' it will try to use the props sent in from the parent first if any.
 
 ##State
 State is pretty much the same as props except this time the parent can't decide what the state object should contain only the component itself can. I think that it's mainly used for when a user is interacting with the component.
