@@ -4,7 +4,7 @@ Once upon a time there was a pure React Menu in a school project in a land far, 
 
 ##But, a new day came \*roaster screaming kuckeliku in the far distance\*
 
-Oh noes! The people of the land have discovered there's bootstrap for React (and not a single line of css was written since). Change was inevitable!
+Oh noes! The people of the land have discovered there's bootstrap for React (and not a single line of css was written since). Change is inevitable!
 
 ##Fastforward to present time
 
