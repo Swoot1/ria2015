@@ -2,7 +2,7 @@
 
 Once upon a time there was a pure React Menu in a school project in a land far, far away where they fika a lot. Links were \<Link\>s and IndexLinks were \<IndexLink\>s and React was working behind the scene setting the right active class on the a tags in the menu. The dictator ruled the land with a Swedish iron hand and there was peace and order.
 
-##But, a new day has come \*roaster screaming kuckeliku in the far distance\*
+##But, a new day came \*roaster screaming kuckeliku in the far distance\*
 
 Oh noes! The people of the land have discovered there's bootstrap for React (and not a single line of css was written since). Change was inevitable!
 
