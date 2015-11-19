@@ -29,3 +29,7 @@ The reason to why I would have chosen no 1 is because it's the easiest one. It c
 I'd say version 2 and 3 is more or less the same except that version 3 is in it's own framework. Since I was upgrading AngularJS at work from version 1.2.something to 1.4.7 last week I have a rather pessimistic view on frameworks right now. Things break! The get outdated and people stop caring for them. It doesn't help if the framework hasn't been updated after every new release. So I'd say 2 comes before 3. Unless! The feature was very special and hard/long to do and the framework contained more functionality I needed, there's a great community around it that you can see is active or it's a school work where the important part is that you learn something.
 
 01000111 01101111 01101111 01100100 00100000 01101110 01101001 01100111 01101000 01110100
+
+#### Comments
+
+[David](http://blog.krawaller.se/riaguild2015/#/member/krawaller): Oh, going to bed was a huge mistake, Elin - your tireddrunkedness was evidently at a perfect [Ballmer Peak level](https://xkcd.com/323/) and you would have written something *truly great* had you continued. Now you'll spend the rest of your life fruitlessly trying to calibrate yourself to find the peak again...
