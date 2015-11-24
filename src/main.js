@@ -5,7 +5,8 @@
     'use strict';
     
     var React = require('react'),
-        ReactDOM = require('react-dom');
+        ReactDOM = require('react-dom'),
+        Colleagues = require('./components/colleagues.js');
 
-    ReactDOM.render(<h1 className="justforshow">Hello you gorgeous</h1>, document.getElementById('root'));
+    ReactDOM.render(<Colleagues/>, document.getElementById('root'));
 }());

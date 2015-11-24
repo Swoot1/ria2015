@@ -1,0 +1,32 @@
+[
+    {
+        fullname: 'Elin Nilsson',
+        workplace: 'Havs- och vattenmyndigheten',
+        employeeNumber: 'A502751'
+    },
+    {
+        fullname: 'Johanna Lynn',
+        workplace: 'Telia',
+        employeeNumber: 'A502759'
+    },
+    {
+        fullname: 'Marcus Nilsson',
+        workplace: 'Havs- och vattenmyndigheten',
+        employeeNumber: 'A503342'
+    },
+    {
+        fullname: 'Jonathan Johansson',
+        workplace: 'Havs- och vattenmyndigheten',
+        employeeNumber: 'A502342'
+    },
+    {
+        fullname: 'Ulrika Olsson',
+        workplace: 'Havs- och vattenmyndigheten',
+        employeeNumber: 'A522342'
+    },
+    {
+        fullname: 'Mats Hellström',
+        workplace: 'Havs- och vattenmyndigheten',
+        employeeNumber: 'A523442'
+    }
+]
