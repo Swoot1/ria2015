@@ -7,7 +7,7 @@ In React there're three common buzz word. Well actually there's many but I'm jus
 If you've tried out the [hello world example](https://facebook.github.io/react/docs/getting-started.html#quick-start-without-npm) on the react home page you already know what static is. It's static. It doesn't change and you can't manipulate it. Everytime you call render you get the same result. 
 
 Like this, check out the render function.
-
+```javascript
     //myChildComponent.js
     (function(){
         'use strict';
@@ -51,14 +51,14 @@ Like this, check out the render function.
             <script type="text/javascript" src="bundle.js"></script>
         </body>
     </html>
-
+```
 This example code will always output "Hello World I'm Static" as an h1 tag.
 
 ###Props
 Use it when you want to manipulate the render output from the outside of the component. By sending in arguments to the component you get a dynamic component and the result from the render method can vary depending on your input. The props shouln't be changed by the component receiving them.
 
 Look at the comments!
-
+```javascript
     //myChildComponent.js
     (function(){
         'use strict';
@@ -96,12 +96,12 @@ Look at the comments!
         // See how we've added the attribute name with the value Santa. The name attribute will be set on the .props object in the component and available for the child component to use.
         ReactDOM.render(<MyChildComponent name="Santa"/>, document.getElementById('root'));
     }());
-    
+ ```   
 If the MyChildComponent is called without props from the parent component it will use the props that's returned from the 'getDefaultProps function' it will try to use the props sent in from the parent first if any.
 
 ##State
 State is pretty much the same as props except this time the parent can't decide what the state object should contain only the component itself can. I think that it's mainly used for when a user is interacting with the component.
-
+```javascript
     //myChildComponent.js
     (function(){
     'use strict';
@@ -126,6 +126,6 @@ State is pretty much the same as props except this time the parent can't decide 
 
         module.exports = MyChildComponent;
     }());
-
+```
 
 [Example from react](https://facebook.github.io/react/) [Read this as well](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md) [And this](https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html)
