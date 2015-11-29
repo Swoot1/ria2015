@@ -6,7 +6,7 @@
     
     var React = require('react'),
         ReactDOM = require('react-dom'),
-        Colleagues = require('./components/colleagues.js');
+        Coworkers = require('./components/coworkers.js');
 
-    ReactDOM.render(<Colleagues/>, document.getElementById('root'));
+    ReactDOM.render(<Coworkers/>, document.getElementById('root'));
 }());

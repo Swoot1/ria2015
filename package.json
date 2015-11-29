@@ -18,7 +18,8 @@
     "watchify": "3.6.0",
     "less-plugin-clean-css": "1.5.1",
     "react-addons-linked-state-mixin": "0.14.2",
-    "react-google-maps": "4.6.0"
+    "react-google-maps": "4.6.0",
+    "firebase": "2.3.2"
   },
   "scripts": {
     "build-js": "browserify --debug -t [reactify --es6] src/main.js -o bundle.js",
