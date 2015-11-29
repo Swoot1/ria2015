@@ -22,7 +22,7 @@ Add a third argument to the isActive function that says if the path only should 
 This argument should only be true for the home link (/).
 
 To make a long short story short. Require the bootstrap elements just like I do below use them in the menuitem code block and to the important part go to the first code block and look for a comment in capitals in the render function. 
-
+```javascript
     // MENU
     var React = require('react'),
     MenuItem = require('./menuItem'),
@@ -97,3 +97,4 @@ To make a long short story short. Require the bootstrap elements just like I do 
     });
     
     module.exports = MenuItem;
+```
