@@ -55,3 +55,8 @@ If you get this error message:
 FIREBASE WARNING: set at /\<YOUR-APP-NAME\>/-randomString failed: permission_denied
 
 when you're making a POST/PUT to Firebase it doesn't have to be that you're not authorized it can be that you're breaking the validation which yields the same error message.
+
+##Just a thought on incremental id
+If you add a new object to your Firebase resource you'll see that you'll get a generated id. Something like: -K4Ihof50OKQaOTHtsqr. I noticed that it's not that incremental (I have a very sharp vision) and that it's not an integer. Why not?
+
+It turns out that since Firebase is a real time database it's not recommended to use incremental id because the risk of one object overwriting the other. (It can be done if you really want to.)
