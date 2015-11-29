@@ -56,7 +56,7 @@ Like this
 ```
 Say we have a sandwich function that we want to make sandwiches but we don't know how many toppings the user is going to insert. This is a good time for using the rest parameter
 ``` javascript
-    makeSandwich(...toppings){
+    var makeSandwich = function(...toppings){
         // toppings is now an array that contains all the toppings inserted into the function
     }
 ```    
