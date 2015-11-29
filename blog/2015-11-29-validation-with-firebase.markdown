@@ -12,7 +12,7 @@ This is the default security rules when you create a new database in Firebase.
       }
     }
 
-You find it at https://<YOUR-APP-NAME>.firebaseio.com/?page=Security. It basically says that it's ok for anyone (in the whole wide world) to read your data and to write anything to your data. As you surely understand this is not recommended. **People can not be trusted.**
+You find it at https://\<YOUR-APP-NAME\>.firebaseio.com/?page=Security. It basically says that it's ok for anyone (in the whole wide world) to read your data and to write anything to your data. As you surely understand this is not recommended. **People can not be trusted.**
 
 ###New validation rules
 What we want is to validate each resources separately according to their security level so that we're in control of the data. 
@@ -52,6 +52,6 @@ As you can see we have a .validate property directly under the $userid object an
 ###A quick tip
 If you get this error message:
 
-FIREBASE WARNING: set at /<YOUR-APP-NAME>/-randomString failed: permission_denied
+FIREBASE WARNING: set at /\<YOUR-APP-NAME\>/-randomString failed: permission_denied
 
 it doesn't have to be that you're not authorized it can be that you're breaking the validation which yields the same error message.
