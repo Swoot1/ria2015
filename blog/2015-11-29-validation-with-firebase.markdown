@@ -4,14 +4,14 @@ The world is not a safe place and there're many bad people that would love to wr
 
 ###Default rules
 This is the default security rules when you create a new database in Firebase.
-    
+```JSON    
     {
       "rules": {
         ".read": true, // it's ok to read!
         ".write": true // it's ok to write! I don't even care what you write!
       }
     }
-
+```
 You find it at https://\<YOUR-APP-NAME\>.firebaseio.com/?page=Security. It basically says that it's ok for anyone (in the whole wide world) to read your data and to write anything to your data. As you surely understand this is not recommended. **People can not be trusted.**
 
 ###New validation rules
@@ -20,7 +20,7 @@ What we want is to validate each resource separately according to their security
 In this example we have a database containing co-workers. Each co-worker has a fullname and an employee number.  
    
 Example:
-   
+```JSON  
     {
       "rules": {
         ".read": true,
@@ -38,7 +38,7 @@ Example:
         }
       }
     }
-    
+```   
 We keep the rules property and the .read property from the default settings. It's still ok for everyone to read the data in the database. 
 
 If we'd want we can  set read to only be true for authenticated users. We'll focus on the validation today and let the read property be. 
