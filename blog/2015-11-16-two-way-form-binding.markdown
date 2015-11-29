@@ -2,7 +2,7 @@
 
 Look no further, LinkedStateMixin provides you with two-way data binding for your forms.
     
-    ```javascript    
+```javascript    
     (function(){
         'use strict';
         
@@ -34,6 +34,6 @@ Look no further, LinkedStateMixin provides you with two-way data binding for you
 
         module.exports = Colleagues;
     }());
-    ```
+```
 
 [Behind the scenes](https://facebook.github.io/react/docs/two-way-binding-helpers.html)
