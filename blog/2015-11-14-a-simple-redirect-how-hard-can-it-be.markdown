@@ -3,7 +3,7 @@
 Actually it's not that hard but it's not that well documented (or maybe I was looking in the wrong places).
 
 Anyway, this is how you do a redirect with the react router.
-
+```javascript
     var React = require("react"),
         Navigation = require('react-router').Navigation; // We're going to need this
 
@@ -21,5 +21,5 @@ Anyway, this is how you do a redirect with the react router.
     });
 
     module.exports = SomeComponentName;
-    
+```    
 [GitHub issue](https://github.com/rackt/react-router/issues/1841) where I found the solution.
