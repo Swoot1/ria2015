@@ -3,7 +3,7 @@
     
     var Firebase = require('firebase'),
         cowotrack = new Firebase("https://cowotrack.firebaseio.com"),
-        coworkersReference = new Firebase('https://cowotrack.firebaseio.com/coworkers'),
+        coworkersReference = new Firebase('https://cowotrack.firebaseio.com/coworker'),
         _ = require("lodash"),
         GoogleMap = require('react-google-maps/lib/GoogleMap'),
         GoogleMapLoader = require('react-google-maps/lib/GoogleMapLoader'),
@@ -45,7 +45,7 @@
         },
             
         componentWillUnMount: function(){
-            cowotrack.off();
+            coworkersReference.off();
         },
             
         render: function(){
