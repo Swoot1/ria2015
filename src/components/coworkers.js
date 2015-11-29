@@ -6,6 +6,7 @@
         coworkersReference = new Firebase('https://cowotrack.firebaseio.com/coworkers'),
         _ = require("lodash"),
         GoogleMap = require('react-google-maps/lib/GoogleMap'),
+        GoogleMapLoader = require('react-google-maps/lib/GoogleMapLoader'),
         Marker = require('react-google-maps/lib/Marker'),
         React = require('react'),
         Firebase = require('firebase'),
@@ -65,21 +66,31 @@
                 <div>
                     <input type="button" onClick={this.authenticateWithOAuthPopUp} value="Logga in"/>
                     <ul>{coworkersHTML}</ul>
-            
-                    <GoogleMap containerProps={{...this.props,
-                                                style: {
-                                                height: "500px",
-                                                width: "500px"
-                                                }
-                                            }}
-                    ref="map"
-                    defaultZoom={13}
-                    defaultCenter={{
-                                    lat: 57.7067818, 
-                                    lng: 11.9668661
-                                    }}>
-                    {markers}
-                  </GoogleMap>
+                
+                    <GoogleMapLoader
+                      containerElement={
+                        <div
+                          {...this.props}
+                          style ={{
+                                height: "500px",
+                                width: "500px"
+                                }}
+                        />
+                      }
+                      googleMapElement={
+                        <GoogleMap
+                          ref={(map) => console.log(map)}
+                          defaultZoom={13}
+                          defaultCenter={{lat: 57.7067818, lng: 11.9668661}}>
+                          {this.state.markers.map((marker, index) => {
+                            return (
+                              <Marker
+                                {...marker}/>
+                            );
+                          })}
+                    </GoogleMap>
+                  }
+                />
                 </div>
             );    
         }
