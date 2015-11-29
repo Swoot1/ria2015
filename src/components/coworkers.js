@@ -4,14 +4,12 @@
     var Firebase = require('firebase'),
         cowotrack = new Firebase("https://cowotrack.firebaseio.com"),
         coworkersReference = new Firebase('https://cowotrack.firebaseio.com/coworkers'),
-        LinkedStateMixin = require('react-addons-linked-state-mixin'),
+        _ = require("lodash"),
         GoogleMap = require('react-google-maps/lib/GoogleMap'),
         Marker = require('react-google-maps/lib/Marker'),
         React = require('react'),
         Firebase = require('firebase'),
         Coworkers = React.createClass({
-        
-        mixins: [LinkedStateMixin], // Two-way binding
         
         getInitialState: function(){
             return {
@@ -51,11 +49,11 @@
             
         render: function(){
             
-            var coworkersHTML = this.state.coworkers.map(function(coworker){
+            var coworkersHTML = _.map(this.state.coworkers, function(coworker){
                 return <li key={coworker.employeeNumber}>{coworker.fullname}</li>;
             });
             
-            var markers = this.state.markers.map((marker, index) => {
+            var markers = _.map(this.state.markers,(marker, index) => {
                   return (
                     <Marker
                       {...marker}/>

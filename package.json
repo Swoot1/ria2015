@@ -16,6 +16,7 @@
     "redux": "3.0.4",
     "redux-thunk": "1.0.0",
     "watchify": "3.6.0",
+    "lodash": "3.10.1",  
     "less-plugin-clean-css": "1.5.1",
     "react-addons-linked-state-mixin": "0.14.2",
     "react-google-maps": "4.6.0",
