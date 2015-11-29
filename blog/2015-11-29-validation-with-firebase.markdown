@@ -54,4 +54,4 @@ If you get this error message:
 
 FIREBASE WARNING: set at /\<YOUR-APP-NAME\>/-randomString failed: permission_denied
 
-it doesn't have to be that you're not authorized it can be that you're breaking the validation which yields the same error message.
+when you're making a POST/PUT to Firebase it doesn't have to be that you're not authorized it can be that you're breaking the validation which yields the same error message.
