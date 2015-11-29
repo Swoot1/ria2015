@@ -11,6 +11,6 @@ I'd say version 2 and 3 is more or less the same except that version 3 is in it'
 Unless! 
 - The feature was very special and hard/long to do and the framework contained more functionality I needed
 - There's a great community around it that you can see is active 
-- It's a school work where learing is the important part.
+- It's a school work where learning is the important part.
 
 01000111 01101111 01101111 01100100 00100000 01101110 01101001 01100111 01101000 01110100
