@@ -6,7 +6,8 @@
     
     var React = require('react'),
         ReactDOM = require('react-dom'),
-        Coworkers = require('./components/coworkers.js');
+        Router = require('react-router').Router,
+        routes = require('./routes');
 
-    ReactDOM.render(<Coworkers/>, document.getElementById('root'));
+    ReactDOM.render(<Router routes={routes}/>, document.getElementById('root'));
 }());
