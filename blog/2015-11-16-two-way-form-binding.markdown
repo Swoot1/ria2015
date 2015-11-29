@@ -1,7 +1,8 @@
 ##Two-way form binding
 
 Look no further, LinkedStateMixin provides you with two-way data binding for your forms.
-
+    
+    ```javascript    
     (function(){
         'use strict';
         
