@@ -7,8 +7,8 @@ This is the default security rules when you create a new database in Firebase.
 ```JSON    
     {
       "rules": {
-        ".read": true, // it's ok to read!
-        ".write": true // it's ok to write! I don't even care what you write!
+        ".read": true,
+        ".write": true
       }
     }
 ```
