@@ -10,19 +10,19 @@ Since I had to read up on the new ECMAScript6 functionality I thought I might as
 Makes it possible to write anonymous function with less code and makes *this* lexical.
     
 Compare the old way of writing anonymous functions
-    
+``` javascript    
     function(){ statements }
     function(){ expression }
-
+````
 With the new ES6 way of doing it
-    
+``` javascript  
     () => { statements }
     () => expression
-    
+```    
 it's shorter, right.
 
 Compare the old way to reference this as a variable;
-
+```javascript
     function Person(){
         var self = this; // Set self to this so that we can reference the person object from..
         self.age = 0;
@@ -31,9 +31,9 @@ Compare the old way to reference this as a variable;
             self.age++; // .. here
         }, 1000);
     }
-    
+```   
 With the new way where this is still the same *this* as outside the function.
-
+```javascript
     function Person(){
         this.age = 0;
         
@@ -42,59 +42,59 @@ With the new way where this is still the same *this* as outside the function.
         });
         
     }
-    
+```    
 [More on arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ####Rest params
 When you have a function with a dynamic number of parameters just put it as the last argument and put three dots in front of the name.
 
 Like this
-
+``` javascript
     function(a, b, ...args) {
         // Now the args parameter is an array that contains all arguments inserted after the b parameter
     }
-
+```
 Say we have a sandwich function that we want to make sandwiches but we don't know how many toppings the user is going to insert. This is a good time for using the rest parameter
-
+``` javascript
     makeSandwich(...toppings){
         // toppings is now an array that contains all the toppings inserted into the function
     }
-    
+```    
 We can call the function with
-
+```javascript
     makeSandwich('cheese');
     makeSandwich('turkey', 'mayo');
     makeSandwich('bacon', 'bacon', 'bacon');
-
+```
 and the function couldn't care less about how many arguments you call it with.
 
 More on rest params [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
 ####Templates
 Hallelujah, multiline strings. I know you're not supposed to write HTML in your .js files but if you've ever done it anyway you know that you have to concatenate every new line, unless you don't want to write everything on the same line that is. With ES6 templates you don't have to instead of
-    
+ ```javascript   
     '<div>' + 
         'This is my div that shouldn't be in the HTML' +
     '</div>'
-
+```
 you can now skip the concatenation with the addition sign and simply write
-
+```javascript
     `<div> 
         This is my div that shouldn't be in the HTML
     </div>`
-    
+```    
 Pay attention to the back-ticks in the beginning and in the end of the string. Without them it won't work.
 
 ES6 template also lets you write expressions directly in you strings.
 
 Compare
-
+```javascript
     'My name is Elin and I\'m' + (currentYear - birthYear) + ' years old.' 
-    
+```    
 With the new crispy
-
+```javascript
     `My name is Elin and I'm ${currentYear - birthYear} years old.`
-    
+```    
 Remember those back-ticks!
     
 You can also write functions for your strings if you'd like but I'm unsure how often you'd need it. Read more about it [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings).
@@ -103,24 +103,24 @@ You can also write functions for your strings if you'd like but I'm unsure how o
 Quite a few changes. To name a few of them
 
 Short hand property names
-    
+```javascript    
     var a = 'myVarA', b = '30', c = {};
     var myObject = {a: a, b: b, c: c};
-    
+```    
 That was the old way where you had to write out the property name. This is the new way:
-    
+```javascript    
     var a = 'myVarA', b = '30', c = {};
     var myObject = {a, b, c};
-
+```
 Where the property names are the variable names automatically.
 
 There's also this new thing with calculated property names
-    
+```javascript    
     var myObject = {
         [someVariableIWantToUseAsName] : 'hello',
         ['myVar' + i] : 'you'
     }
-
+```
 There's some more stuff i.e. short hand method names and you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 ####Classes
