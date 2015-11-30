@@ -3,7 +3,7 @@
 The world is not a safe place and there're many bad people that would love to wreck your database. That's why you <del>should</del> have to set up rules in your Firebase database, making their lives harder and yours easier.
 
 ###Default rules
-This is the default security rules when you create a new database in Firebase.
+These are the default security rules when you create a new database in Firebase.
 ```JSON    
     {
       "rules": {
