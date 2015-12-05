@@ -11,6 +11,8 @@ They map the parts in the bundled file that you generated with your preprocessor
 
 [Read all about sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 
+##Start using Source Maps
+
 In Browserify add the --debug flag after the browserify command:
     
     browserify --debug
