@@ -10,12 +10,15 @@ They map the parts in the bundled file that you generated with your preprocessor
 [Read all about sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 
 In Browserify add the --debug flag after the browserify command:
+    
     browserify --debug
     
 In Webpack add this to your webpack config file export object.
+    
     devtool: 'source-map',
 
 In Watchify add the --debug flag after the watchify command:
+    
     watchify --debug
     
 Gulp, Grunt and all the others? Google.
