@@ -49,7 +49,7 @@ Meaning that if you want to write all you HTML with React's JavaScript syntax fr
 
 Bundling all you .js files has many advantages such as:
 * Your page will load faster since you only need to fetch one .js file. 
-* You won't include scripts that you don't use anymore.
+* You won't include scripts that you don't `require` anywhere. So make sure not to require modules that you aren't using, as they will still be needlessly included in the build file! A good editor will warn you about unused variables which will catch unused modules too.
 * Browserify takes care of the order the scripts need to be loaded in.
 * Perfect spot for a pull request.
 
