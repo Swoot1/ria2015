@@ -7,7 +7,7 @@ Isn't that file a bit annoying and hard to debug? How do you know which file you
 ###Source Maps
 They map the parts in the bundled file that you generated with your preprocessor to the actual .js files. Letting you debug them and not the bundled file.
 
-(Read all about sourcemaps)[http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/]
+[Read all about sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 
 In Browserify add the --debug flag after the browserify command:
     browserify --debug
