@@ -3,7 +3,6 @@
     
     var React = require('react'),
         _ = require('lodash'),
-        coworkersReference = new Firebase('https://cowotrack.firebaseio.com/coworker'),
         CoworkerCreate = React.createClass({
         
         getInitialState: function(){
@@ -32,9 +31,9 @@
             });*/
         },
             
-        componentWillUnMount: function(){
+        /*componentWillUnMount: function(){
             coworkersReference.off();
-        },
+        },*/
             
         handleChange:function(propertyName, event){
             var propertyNames = propertyName.split('.');
@@ -75,7 +74,6 @@
                         <input type="text" placeholder="Title" onChange={this.handleChange.bind(this, 'newCoworker.title')}/>
                         <input type="button" onClick={this.createCoworker} value="Lägg till" />
                     </form>
-                    <p>{this.state.newCoworker.fullname}</p>
                 </div>
             );
         }   

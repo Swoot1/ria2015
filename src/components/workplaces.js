@@ -50,13 +50,13 @@
             var workplacesHTML = [];
             var markers = [];
             
-            var addMarker = function(workplace){
+            var addMarker = function(workplace, index){
                 var options = {
                     position: {
                         lat: workplace.latitude,
                         lng: workplace.longitude,
                     },
-                    key: "Gothenburg",
+                    key: index,
                     defaultAnimation: 2
                 };
                 markers.push(React.createElement(Marker, options));
@@ -64,8 +64,8 @@
             
             for(var workplace in this.state.workplaces){
                 if(this.state.workplaces.hasOwnProperty(workplace)){
-                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}>{this.state.workplaces[workplace].workplaceName}</li>);
-                    addMarker(this.state.workplaces[workplace]);
+                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}>{this.state.workplaces[workplace].companyName}</li>);
+                    addMarker(this.state.workplaces[workplace], workplace);
                 }   
             }
             
@@ -94,15 +94,17 @@
                        </GoogleMap>
                     }/>
                     {this.state.selectedWorkplace ? <div>
-                        <p>{this.state.selectedWorkplace.workplaceName}</p>
+                        <p>{this.state.selectedWorkplace.companyName}</p>
                         <p>{this.state.selectedWorkplace.city}</p>
                         <p>{this.state.selectedWorkplace.street}</p>
                         <p>{this.state.selectedWorkplace.zipCode}</p>
+                        <p>{this.state.selectedWorkplace.phoneNumber}</p>
+                        <p>{this.state.selectedWorkplace.homepage}</p>
                         <p>{this.state.selectedWorkplace.workplaceDescription}</p>
                         <ul>
                             {
-                                _.map(this.state.selectedWorkplace.coworkers, function(coworker){
-                                    return <li>{coworker.fullname} jobbar som {coworker.title}</li>;    
+                                _.map(this.state.selectedWorkplace.coworkers, function(coworker, index){
+                                    return <li key={index}>{coworker.fullname} jobbar som {coworker.title}</li>;    
                                 }) 
                             }
                         </ul>

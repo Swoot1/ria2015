@@ -7,12 +7,16 @@
     Workplaces = require('./components/workplaces'),
     Workplace = require('./components/workplace'),
     CoworkerCreate = require('./components/coworkerCreate'),
+    WorkplaceCreate = require('./components/workplaceCreate'),
     Wrapper = require('./components/wrapper');
 
     module.exports = (
         <Route path="/" component={Wrapper}>
             <Route path="workplaces">
                 <IndexRoute component={Workplaces} />
+                <Route path="new">
+                    <IndexRoute component={WorkplaceCreate} />
+                </Route>
                 <Route path=":workplaceId">
                     <IndexRoute component={Workplace} />
                     <Route path="coworkers">
