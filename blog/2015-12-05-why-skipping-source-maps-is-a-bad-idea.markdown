@@ -1,6 +1,8 @@
 ##Why skipping source maps is a bad idea.
 
-Debugging in the dev tools is all fine and dandy when you use regular \<script>\</script> tags to import your JavaScript files. You'll find your .js files under the sources tab in your browser's dev tools but what about using preprocessors like grunt, gulp, webpack or browserify? Then you get a huuuuUUUuuuUUUuuuuUUuuge file bundled with ALL THE .JS FILES. YES I'M SCREAMING. When you open the sources tab in your dev tool that's the only .js file you see. 
+Debugging in the dev tools is all fine and dandy when you use regular \<script>\</script> tags to import your JavaScript files. You'll find your .js files under the sources tab in your browser's dev tools. 
+
+But what about using preprocessors like Grunt, Gulp, Webpack or Browserify? Then you can't see your .js files in the sources tab anymore. Then you get a huuuuUUUuuuUUUuuuuUUuuge file bundled with ALL THE .JS FILES. YES I'M SCREAMING. When you open the sources tab in your dev tool that's the only .js file you see. 
 
 Isn't that file a bit annoying and hard to debug? How do you know which file you're actually debugging? Maybe you try to do search and find on some code from the bundled file in your IDE and hopefully you'll find the right file. But is this good? No. This is uneccessary painful. How can we fix this?
 
