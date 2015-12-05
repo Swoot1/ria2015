@@ -14,3 +14,7 @@ Unless!
 - It's a school work where learning is the important part.
 
 01000111 01101111 01101111 01100100 00100000 01101110 01101001 01100111 01101000 01110100
+
+#### Comments
+
+[David](http://blog.krawaller.se/riaguild2015/#/member/krawaller): Oh, going to bed was a huge mistake, Elin - your tireddrunkedness was evidently at a perfect [Ballmer Peak level](https://xkcd.com/323/) and you would have written something *truly great* had you continued. Now you'll spend the rest of your life fruitlessly trying to calibrate yourself to find the peak again...
