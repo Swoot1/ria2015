@@ -14,6 +14,7 @@
         
         getInitialState: function(){
             return {
+                selectedWorkplace: null,
                 workplaces: []
             };
         },
@@ -40,6 +41,10 @@
             coworkersReference.off();
         },
             
+        setSelectedWorkplace:function(index){
+            this.setState({selectedWorkplace: this.state.workplaces[index]});
+        },
+            
         render: function(){
             
             var workplacesHTML = [];
@@ -59,7 +64,7 @@
             
             for(var workplace in this.state.workplaces){
                 if(this.state.workplaces.hasOwnProperty(workplace)){
-                    workplacesHTML.push(<li key={workplace}>{this.state.workplaces[workplace].workplaceName}</li>);
+                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}>{this.state.workplaces[workplace].workplaceName}</li>);
                     addMarker(this.state.workplaces[workplace]);
                 }   
             }
@@ -86,9 +91,23 @@
                           defaultZoom={13}
                           defaultCenter={{lat: 57.7067818, lng: 11.9668661}}>
                           {markers}
-                    </GoogleMap>
-                  }
-                />
+                       </GoogleMap>
+                    }/>
+                    {this.state.selectedWorkplace ? <div>
+                        <p>{this.state.selectedWorkplace.workplaceName}</p>
+                        <p>{this.state.selectedWorkplace.city}</p>
+                        <p>{this.state.selectedWorkplace.street}</p>
+                        <p>{this.state.selectedWorkplace.zipCode}</p>
+                        <p>{this.state.selectedWorkplace.workplaceDescription}</p>
+                        <ul>
+                            {
+                                _.map(this.state.selectedWorkplace.coworkers, function(coworker){
+                                    return <li>{coworker.fullname} jobbar som {coworker.title}</li>;    
+                                }) 
+                            }
+                        </ul>
+                        </div> : <div></div>
+                    }
                 </div>
             );    
         }
