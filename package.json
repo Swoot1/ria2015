@@ -3,29 +3,29 @@
   "version": "0.0.0",
   "repository": "https://github.com/Swoot1/ria2015",
   "devDependencies": {
-    "react-bootstrap": "0.27.3",
+    "bootstrap": "3.3.6",
     "browserify": "12.0.1",
-    "catw": "1.0.1",
+    "firebase": "2.3.2",
     "history": "1.12.5",
-    "less": "2.5.3",
+    "lodash": "3.10.1",
+    "node-sass": "3.4.2",
+    "nodemon": "1.8.1",
     "react": "0.14.2",
+    "react-bootstrap": "0.27.3",
     "react-dom": "0.14.2",
+    "react-google-maps": "4.6.0",
     "react-redux": "4.0.0",
     "react-router": "1.0.0-rc4",
     "reactify": "1.1.1",
     "redux": "3.0.4",
     "redux-thunk": "1.0.0",
-    "watchify": "3.6.0",
-    "lodash": "3.10.1",  
-    "less-plugin-clean-css": "1.5.1",
-    "react-google-maps": "4.6.0",
-    "firebase": "2.3.2"
+    "watchify": "3.6.0"
   },
   "scripts": {
     "build-js": "browserify --debug -t [reactify --es6] src/main.js -o bundle.js",
-    "build-css": "lessc --clean-css styles/styles.less dist/styles/styles.min.css",
+    "build-css": "node-sass --include-path scss styles/styles.scss dist/styles/styles.min.css",
     "build": "npm run build-js && npm run build-css",
     "watch-js": "watchify --debug -t [reactify --es6] src/**/*.js -o bundle.js",
-    "watch-css": "catw -wvc 'lessc --clean-css -' 'styles/styles.less' > dist/styles/styles.min.css"
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   }
 }
