@@ -14,6 +14,9 @@
         Row = require('react-bootstrap/lib/Row'),
         Col = require('react-bootstrap/lib/Col'),
         ButtonInput = require('react-bootstrap/lib/ButtonInput'),
+        WorkplaceInfo = require('./workplaceInfo'),
+        Map = require('./map'),
+        Authentication = require('./Authentication'),
         Workplaces = React.createClass({
         
         mixins: [Navigation],
@@ -23,16 +26,6 @@
                 selectedWorkplace: null,
                 workplaces: []
             };
-        },
-            
-        authenticateWithOAuthPopUp:function() {
-            cowotrack.authWithOAuthPopup("github", function(error, authData) {
-              if (error) {
-                console.log("Login Failed!", error);
-              } else {
-                console.log("Authenticated successfully with payload:", authData);
-              }
-            });
         },
             
         redirectToCreateWorkPlace: function(){
@@ -83,7 +76,7 @@
                 <div>
                 <Row>
                     <Col xs={12}>
-                        <input type="button" onClick={this.authenticateWithOAuthPopUp} value="Logga in"/>
+                       <Authentication />
                     </Col>
                 </Row>
                 <Row>
@@ -92,43 +85,11 @@
                         <ButtonInput bsStyle="success" onClick={this.redirectToCreateWorkPlace} value="Lägg till"/>
                     </Col>
                     <Col xs={3}>
-                        {this.state.selectedWorkplace ? <div>
-                        <p>{this.state.selectedWorkplace.companyName}</p>
-                        <p>{this.state.selectedWorkplace.city}</p>
-                        <p>{this.state.selectedWorkplace.street}</p>
-                        <p>{this.state.selectedWorkplace.zipCode}</p>
-                        <p>{this.state.selectedWorkplace.phoneNumber}</p>
-                        <p>{this.state.selectedWorkplace.homepage}</p>
-                        <p>{this.state.selectedWorkplace.workplaceDescription}</p>
-                        <ul>
-                            {
-                                _.map(this.state.selectedWorkplace.coworkers, function(coworker, index){
-                                    return <li key={index}>{coworker.fullname} jobbar som {coworker.title}</li>;    
-                                }) 
-                            }
-                        </ul>
-                        </div> : <div></div>
+                        {this.state.selectedWorkplace ? React.createElement(WorkplaceInfo, {workplace: this.state.selectedWorkplace}) : <div></div>
                         }
                     </Col>
                     <Col xs={3}>
-                        <GoogleMapLoader
-                          containerElement={
-                            <div
-                              {...this.props}
-                              style ={{
-                                    height: "500px",
-                                    width: "500px"
-                                    }}
-                            />
-                          }
-                          googleMapElement={
-                            <GoogleMap
-                              ref={(map) => console.log(map)}
-                              defaultZoom={13}
-                              defaultCenter={{lat: 57.7067818, lng: 11.9668661}}>
-                              {markers}
-                           </GoogleMap>
-                        }/>
+                        {React.createElement(Map, {markers: markers})}
                     </Col>
                 </Row>
                         </div>

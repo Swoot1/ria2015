@@ -4,6 +4,7 @@
     var Firebase = require('firebase'),
         React = require('react'),
         Firebase = require('firebase'),
+        WorkplaceInfo = require('./workplaceInfo'),
         Workplace = React.createClass({
         
         getInitialState: function(){
@@ -33,12 +34,7 @@
             
         render: function(){
             return(
-                <div>
-                    <p>{this.state.workplace.city}</p>
-                    <p>{this.state.workplace.street}</p>
-                    <p>{this.state.workplace.zipCode}</p>
-                    <p>{this.state.workplace.workplaceDescription}</p>
-                </div>
+                React.createElement(WorkplaceInfo, {workplace: this.state.workplace})
             );    
         }
     });

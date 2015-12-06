@@ -10,4 +10,5 @@
         routes = require('./routes');
 
     ReactDOM.render(<Router routes={routes}/>, document.getElementById('root'));
+                    
 }());

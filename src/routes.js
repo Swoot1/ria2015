@@ -1,15 +1,18 @@
-(function(){
-    var React = require('react'),
-    ReactRouter = require('react-router'),
-    Route = ReactRouter.Route,
-    IndexRoute = ReactRouter.IndexRoute,
-    /**Coworker = require('./components/coworker'),**/
-    Workplaces = require('./components/workplaces'),
-    Workplace = require('./components/workplace'),
-    CoworkerCreate = require('./components/coworkerCreate'),
-    WorkplaceCreate = require('./components/workplaceCreate'),
-    Wrapper = require('./components/wrapper');
+/*global require*/
 
+(function(){
+    
+    'use strict';
+    
+    var React = require('react'),
+        Route = require('react-router').Route,
+        Wrapper = require('./components/wrapper'),
+        IndexRoute = require('react-router').IndexRoute,
+        Workplaces = require('./components/workplaces'),
+        Workplace = require('./components/workplace'),
+        WorkplaceCreate = require('./components/workplaceCreate'),
+        CoworkerCreate = require('./components/coworkerCreate');
+        
     module.exports = (
         <Route path="/" component={Wrapper}>
             <Route path="workplaces">
