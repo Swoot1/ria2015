@@ -4,6 +4,10 @@
     var React = require('react'),
         _ = require('lodash'),
         workplacesReference = new Firebase('https://cowotrack.firebaseio.com/workplaces'),
+        Input = require('react-bootstrap/lib/Input'),
+        ButtonInput = require('react-bootstrap/lib/ButtonInput'),
+        Col = require('react-bootstrap/lib/Col'),
+        Row = require('react-bootstrap/lib/Row'),
         WorkplaceCreate = React.createClass({
         
         getInitialState: function(){
@@ -76,20 +80,22 @@
                 };
             
             return (
-                <div>
-                    <form>
-                        <input type="text" placeholder="Företagsnamn" onChange={this.handleChange.bind(this, 'newWorkplace.companyName')}/>
-                        <input type="text" placeholder="Hemsida" onChange={this.handleChange.bind(this, 'newWorkplace.homepage')}/>
-                        <input type="text" placeholder="Gata" onChange={this.handleChange.bind(this, 'newWorkplace.street')}/>
-                        <input type="text" placeholder="Postkod" onChange={this.handleChange.bind(this, 'newWorkplace.zipCode')}/>
-                        <input type="text" placeholder="Stad" onChange={this.handleChange.bind(this, 'newWorkplace.city')}/>
-                        <input type="text" placeholder="Longitud" onChange={this.handleChange.bind(this, 'newWorkplace.longitude')}/>
-                        <input type="text" placeholder="Latitud" onChange={this.handleChange.bind(this, 'newWorkplace.latitude')}/>
-                        <textarea placeholder="Företagsbeskrivning" onChange={this.handleChange.bind(this, 'newWorkplace.workplaceDescription')}></textarea>  
-                        <input type="text" placeholder="Telefonnummer" onChange={this.handleChange.bind(this, 'newWorkplace.phoneNumber')}/>
-                        <input type="button" onClick={this.createWorkplace} value="Lägg till" />
-                    </form>
-                </div>
+                <Row>
+                    <Col xs={4}>
+                        <form>
+                            <Input type="text" placeholder="Företagsnamn" onChange={this.handleChange.bind(this, 'newWorkplace.companyName')}/>
+                            <Input type="text" placeholder="Hemsida" onChange={this.handleChange.bind(this, 'newWorkplace.homepage')}/>
+                            <Input type="text" placeholder="Gata" onChange={this.handleChange.bind(this, 'newWorkplace.street')}/>
+                            <Input type="text" placeholder="Postkod" onChange={this.handleChange.bind(this, 'newWorkplace.zipCode')}/>
+                            <Input type="text" placeholder="Stad" onChange={this.handleChange.bind(this, 'newWorkplace.city')}/>
+                            <Input type="text" placeholder="Longitud" onChange={this.handleChange.bind(this, 'newWorkplace.longitude')}/>
+                            <Input type="text" placeholder="Latitud" onChange={this.handleChange.bind(this, 'newWorkplace.latitude')}/>
+                            <Input type="textarea" placeholder="Företagsbeskrivning" onChange={this.handleChange.bind(this, 'newWorkplace.workplaceDescription')}/>
+                            <Input type="text" placeholder="Telefonnummer" onChange={this.handleChange.bind(this, 'newWorkplace.phoneNumber')}/>
+                            <ButtonInput bsStyle="success" className="pull-right" onClick={this.createWorkplace} value="Lägg till" pullRight />
+                        </form>
+                    </Col>
+                </Row>
             );
         }   
     });

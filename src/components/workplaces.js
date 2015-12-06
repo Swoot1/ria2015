@@ -10,10 +10,14 @@
         Marker = require('react-google-maps/lib/Marker'),
         React = require('react'),
         Firebase = require('firebase'),
+        Navigation = require('react-router').Navigation,
         Row = require('react-bootstrap/lib/Row'),
         Col = require('react-bootstrap/lib/Col'),
+        ButtonInput = require('react-bootstrap/lib/ButtonInput'),
         Workplaces = React.createClass({
         
+        mixins: [Navigation],
+            
         getInitialState: function(){
             return {
                 selectedWorkplace: null,
@@ -29,6 +33,10 @@
                 console.log("Authenticated successfully with payload:", authData);
               }
             });
+        },
+            
+        redirectToCreateWorkPlace: function(){
+            this.props.history.pushState(null, '/workplaces/new');
         },
         
         componentWillMount: function(){
@@ -80,7 +88,8 @@
                 </Row>
                 <Row>
                     <Col xs={3}>
-                        <ul>{workplacesHTML}</ul>                   
+                        <ul>{workplacesHTML}</ul>
+                        <ButtonInput bsStyle="success" onClick={this.redirectToCreateWorkPlace} value="Lägg till"/>
                     </Col>
                     <Col xs={3}>
                         {this.state.selectedWorkplace ? <div>

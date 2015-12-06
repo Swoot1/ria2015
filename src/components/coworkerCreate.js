@@ -2,7 +2,10 @@
     'use strict';
     
     var React = require('react'),
-        _ = require('lodash'),
+        Input = require('react-bootstrap/lib/Input'),
+        ButtonInput = require('react-bootstrap/lib/ButtonInput'),
+        Col = require('react-bootstrap/lib/Col'),
+        Row = require('react-bootstrap/lib/Row'),
         CoworkerCreate = React.createClass({
 
         getInitialState: function(){
@@ -59,22 +62,17 @@
         },
             
         render: function(){
-            var workplaces = [(<option value={null}></option>)];
-                
-                for(var workplace in this.state.workplaces){
-                    if(this.state.workplaces.hasOwnProperty(workplace)){
-                        workplaces.push(<option>{this.state.workplaces[workplace].nameOfWorkplace}</option>);    
-                    }
-                };
             
             return (
-                <div>
-                    <form>
-                        <input type="text" placeholder="Namn och efternamn" onChange={this.handleChange.bind(this, 'newCoworker.fullname')}/>
-                        <input type="text" placeholder="Title" onChange={this.handleChange.bind(this, 'newCoworker.title')}/>
-                        <input type="button" onClick={this.createCoworker} value="Lägg till" />
-                    </form>
-                </div>
+                <Row>
+                    <Col xs={4}>
+                        <form>
+                            <Input type="text" placeholder="Namn och efternamn" onChange={this.handleChange.bind(this, 'newCoworker.fullname')}/>
+                            <Input type="text" placeholder="Title" onChange={this.handleChange.bind(this, 'newCoworker.title')}/>
+                        <ButtonInput bsStyle="success" className="pull-right" onClick={this.createCoworker} value="Lägg till" />
+                        </form>
+                    </Col>
+                </Row>
             );
         }   
     });

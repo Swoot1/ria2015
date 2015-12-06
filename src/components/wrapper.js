@@ -8,11 +8,9 @@
     var Wrapper = React.createClass({
         render: function() {
             return (
-                <Row>
-                    <Col xs={12} >
-                        {this.props.children}
-                    </Col>
-                </Row>
+                <div xs={12} className="wrapper" >
+                    {this.props.children}
+                </div>
             );
         }
     });
