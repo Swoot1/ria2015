@@ -4,7 +4,7 @@
     var React = require('react'),
         _ = require('lodash'),
         CoworkerCreate = React.createClass({
-        
+
         getInitialState: function(){
             return {
                 workplaces: [],

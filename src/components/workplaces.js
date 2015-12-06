@@ -10,6 +10,8 @@
         Marker = require('react-google-maps/lib/Marker'),
         React = require('react'),
         Firebase = require('firebase'),
+        Row = require('react-bootstrap/lib/Row'),
+        Col = require('react-bootstrap/lib/Col'),
         Workplaces = React.createClass({
         
         getInitialState: function(){
@@ -64,36 +66,24 @@
             
             for(var workplace in this.state.workplaces){
                 if(this.state.workplaces.hasOwnProperty(workplace)){
-                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}>{this.state.workplaces[workplace].companyName}</li>);
+                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}><a>{this.state.workplaces[workplace].companyName}</a></li>);
                     addMarker(this.state.workplaces[workplace], workplace);
                 }   
             }
             
             return(
-                
                 <div>
-                    <input type="button" onClick={this.authenticateWithOAuthPopUp} value="Logga in"/>
-                    <ul>{workplacesHTML}</ul>
-                
-                    <GoogleMapLoader
-                      containerElement={
-                        <div
-                          {...this.props}
-                          style ={{
-                                height: "500px",
-                                width: "500px"
-                                }}
-                        />
-                      }
-                      googleMapElement={
-                        <GoogleMap
-                          ref={(map) => console.log(map)}
-                          defaultZoom={13}
-                          defaultCenter={{lat: 57.7067818, lng: 11.9668661}}>
-                          {markers}
-                       </GoogleMap>
-                    }/>
-                    {this.state.selectedWorkplace ? <div>
+                <Row>
+                    <Col xs={12}>
+                        <input type="button" onClick={this.authenticateWithOAuthPopUp} value="Logga in"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={3}>
+                        <ul>{workplacesHTML}</ul>                   
+                    </Col>
+                    <Col xs={3}>
+                        {this.state.selectedWorkplace ? <div>
                         <p>{this.state.selectedWorkplace.companyName}</p>
                         <p>{this.state.selectedWorkplace.city}</p>
                         <p>{this.state.selectedWorkplace.street}</p>
@@ -109,8 +99,30 @@
                             }
                         </ul>
                         </div> : <div></div>
-                    }
-                </div>
+                        }
+                    </Col>
+                    <Col xs={3}>
+                        <GoogleMapLoader
+                          containerElement={
+                            <div
+                              {...this.props}
+                              style ={{
+                                    height: "500px",
+                                    width: "500px"
+                                    }}
+                            />
+                          }
+                          googleMapElement={
+                            <GoogleMap
+                              ref={(map) => console.log(map)}
+                              defaultZoom={13}
+                              defaultCenter={{lat: 57.7067818, lng: 11.9668661}}>
+                              {markers}
+                           </GoogleMap>
+                        }/>
+                    </Col>
+                </Row>
+                        </div>
             );    
         }
     });
