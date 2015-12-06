@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "repository": "https://github.com/Swoot1/ria2015",
   "devDependencies": {
-    "bootstrap": "3.3.6",
     "browserify": "12.0.1",
     "firebase": "2.3.2",
     "history": "1.12.5",
