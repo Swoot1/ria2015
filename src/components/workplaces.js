@@ -2,7 +2,6 @@
     'use strict';
     
     var Firebase = require('firebase'),
-        cowotrack = new Firebase('https://cowotrack.firebaseio.com'),
         workplacesReference = new Firebase('https://cowotrack.firebaseio.com/workplaces'),
         _ = require('lodash'),
         GoogleMap = require('react-google-maps/lib/GoogleMap'),
@@ -41,6 +40,7 @@
         },
             
         componentWillUnMount: function(){
+            workplacesReference.off();
             coworkersReference.off();
         },
             
@@ -67,32 +67,45 @@
             
             for(var workplace in this.state.workplaces){
                 if(this.state.workplaces.hasOwnProperty(workplace)){
-                    workplacesHTML.push(<li key={workplace} onClick={this.setSelectedWorkplace.bind(this, workplace)}><a>{this.state.workplaces[workplace].companyName}</a></li>);
+                    workplacesHTML.push(
+                        <li 
+                            key={workplace} 
+                            onClick={this.setSelectedWorkplace.bind(this, workplace)}>
+                            <a>{this.state.workplaces[workplace].companyName}</a>
+                        </li>);
                     addMarker(this.state.workplaces[workplace], workplace);
                 }   
             }
             
             return(
                 <div>
-                <Row>
-                    <Col xs={12}>
-                       <Authentication />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={3}>
-                        <ul>{workplacesHTML}</ul>
-                        <ButtonInput bsStyle="success" onClick={this.redirectToCreateWorkPlace} value="Lägg till"/>
-                    </Col>
-                    <Col xs={3}>
-                        {this.state.selectedWorkplace ? React.createElement(WorkplaceInfo, {workplace: this.state.selectedWorkplace}) : <div></div>
-                        }
-                    </Col>
-                    <Col xs={3}>
-                        {React.createElement(Map, {markers: markers})}
-                    </Col>
-                </Row>
-                        </div>
+                    <Row>
+                        <Col xs={12}>
+                           <Authentication />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={3}>
+                            <ul>{workplacesHTML}</ul>
+                            <ButtonInput 
+                                bsStyle="success" 
+                                onClick={this.redirectToCreateWorkPlace} 
+                                value="Lägg till"
+                            />
+                        </Col>
+                        <Col xs={3}>
+                            {
+                                this.state.selectedWorkplace ? React.createElement(WorkplaceInfo, {
+                                       workplace: this.state.selectedWorkplace
+                                       }) 
+                                : <div></div>
+                            }
+                        </Col>
+                        <Col xs={3}>
+                            {React.createElement(Map, {markers: markers})}
+                        </Col>
+                    </Row>
+                </div>
             );    
         }
     });

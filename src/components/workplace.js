@@ -5,6 +5,7 @@
         React = require('react'),
         Firebase = require('firebase'),
         WorkplaceInfo = require('./workplaceInfo'),
+        workplaceReference,
         Workplace = React.createClass({
         
         getInitialState: function(){
@@ -20,17 +21,23 @@
         },
             
         componentWillMount: function(){
-            var workplaceReference = new Firebase('https://cowotrack.firebaseio.com/workplaces/' + this.props.params.workplaceId);
+            var onError = function(errorObject){
+                console.log('The read failed ' + errorObject.code);
+            };
+            
+            workplaceReference = new Firebase(
+                'https://cowotrack.firebaseio.com/workplaces/' + this.props.params.workplaceId);
+            
             workplaceReference.on('value', function(snapshot){
                 this.setState({workplace: snapshot.val()});
-            }.bind(this), function(errorObject){
-                console.log('The read failed ' + errorObject.code);
-            });
+            }.bind(this), onError);
+            
+            
         },
             
-/*        componentWillUnMount: function(){
-            coworkersReference.off();
-        },*/
+        componentWillUnMount: function(){
+            workplaceReference.off();
+        },
             
         render: function(){
             return(

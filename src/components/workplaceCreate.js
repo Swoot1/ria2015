@@ -8,11 +8,11 @@
         ButtonInput = require('react-bootstrap/lib/ButtonInput'),
         Col = require('react-bootstrap/lib/Col'),
         Row = require('react-bootstrap/lib/Row'),
+        workplacesReference = new Firebase('https://cowotrack.firebaseio.com/workplaces'),
         WorkplaceCreate = React.createClass({
         
         getInitialState: function(){
             return {
-                workplaces: [],
                 newWorkplace: {
                     companyName: '',
                     street: '',
@@ -29,8 +29,7 @@
         },
         
         createWorkplace: function(){
-            var workplaces = new Firebase('https://cowotrack.firebaseio.com/workplaces');
-            workplaces.push(this.state.newWorkplace,
+            workplacesReference.push(this.state.newWorkplace,
             function(error){
                 console.log(error)
             });
@@ -40,7 +39,7 @@
             workplacesReference.on('value', function(snapshot){
                 this.setState({workplaces: snapshot.val()});
             }.bind(this), function(errorObject){
-                console.log('The read failed' + errorObject.code);
+                console.log('The read failed ' + errorObject.code);
             });
         },
             
@@ -58,7 +57,12 @@
                 propertyName = nestedPropertyNames.shift();
             
             if(nestedPropertyNames.length){
-                initialObject[propertyName] = this.setStateProperty(nestedPropertyNames, initialObject[propertyName], newValue, false); 
+                initialObject[propertyName] = this.setStateProperty(
+                    nestedPropertyNames, 
+                    initialObject[propertyName], 
+                    newValue, 
+                    false
+                ); 
             }else{
                 initialObject[propertyName] = newValue;
             }
@@ -83,16 +87,58 @@
                 <Row>
                     <Col xs={4}>
                         <form>
-                            <Input type="text" placeholder="Företagsnamn" onChange={this.handleChange.bind(this, 'newWorkplace.companyName')}/>
-                            <Input type="text" placeholder="Hemsida" onChange={this.handleChange.bind(this, 'newWorkplace.homepage')}/>
-                            <Input type="text" placeholder="Gata" onChange={this.handleChange.bind(this, 'newWorkplace.street')}/>
-                            <Input type="text" placeholder="Postkod" onChange={this.handleChange.bind(this, 'newWorkplace.zipCode')}/>
-                            <Input type="text" placeholder="Stad" onChange={this.handleChange.bind(this, 'newWorkplace.city')}/>
-                            <Input type="text" placeholder="Longitud" onChange={this.handleChange.bind(this, 'newWorkplace.longitude')}/>
-                            <Input type="text" placeholder="Latitud" onChange={this.handleChange.bind(this, 'newWorkplace.latitude')}/>
-                            <Input type="textarea" placeholder="Företagsbeskrivning" onChange={this.handleChange.bind(this, 'newWorkplace.workplaceDescription')}/>
-                            <Input type="text" placeholder="Telefonnummer" onChange={this.handleChange.bind(this, 'newWorkplace.phoneNumber')}/>
-                            <ButtonInput bsStyle="success" className="pull-right" onClick={this.createWorkplace} value="Lägg till" pullRight />
+                            <Input 
+                                type="text" 
+                                placeholder="Företagsnamn" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.companyName')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Hemsida" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.homepage')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Gata" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.street')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Postkod" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.zipCode')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Stad" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.city')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Longitud" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.longitude')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Latitud" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.latitude')}
+                            />
+                            <Input 
+                                type="textarea" 
+                                placeholder="Företagsbeskrivning" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.workplaceDescription')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Telefonnummer" 
+                                onChange={this.handleChange.bind(this, 'newWorkplace.phoneNumber')}
+                            />
+                            <ButtonInput 
+                                bsStyle="success" 
+                                className="pull-right" 
+                                onClick={this.createWorkplace} 
+                                value="Lägg till" 
+                                pullRight 
+                            />
                         </form>
                     </Col>
                 </Row>

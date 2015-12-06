@@ -6,37 +6,38 @@
         ButtonInput = require('react-bootstrap/lib/ButtonInput'),
         Col = require('react-bootstrap/lib/Col'),
         Row = require('react-bootstrap/lib/Row'),
+        coworkersReference,
         CoworkerCreate = React.createClass({
 
         getInitialState: function(){
             return {
-                workplaces: [],
                 newCoworker: {
                     fullname: '',
-                    title: 'Unknown'
+                    title: 'okänd'
                 }
             };
         },
         
         createCoworker: function(){
-            var workplaceCoworkers = new Firebase('https://cowotrack.firebaseio.com/workplaces/' + this.props.params.workplaceId + '/coworkers');
-            workplaceCoworkers.push(this.state.newCoworker,
+            coworkersReference.push(this.state.newCoworker,
             function(error){
                 console.log(error)
             });
         },
             
         componentWillMount: function(){
-            /*workplacesReference.on('value', function(snapshot){
-                this.setState({workplaces: snapshot.val()});
+            coworkersReference = new Firebase(
+                'https://cowotrack.firebaseio.com/workplaces/' + this.props.params.workplaceId + '/coworkers');
+            coworkersReference.on('value', function(snapshot){
+                this.setState({coworkers: snapshot.val()});
             }.bind(this), function(errorObject){
-                console.log('The read failed' + errorObject.code);
-            });*/
+                console.log('The read failed ' + errorObject.code);
+            });
         },
             
-        /*componentWillUnMount: function(){
+        componentWillUnMount: function(){
             coworkersReference.off();
-        },*/
+        },
             
         handleChange:function(propertyName, event){
             var propertyNames = propertyName.split('.');
@@ -49,7 +50,12 @@
                 propertyName = nestedPropertyNames.shift();
             
             if(nestedPropertyNames.length){
-                initialObject[propertyName] = this.setStateProperty(nestedPropertyNames, initialObject[propertyName], newValue, false); 
+                initialObject[propertyName] = this.setStateProperty(
+                    nestedPropertyNames, 
+                    initialObject[propertyName], 
+                    newValue, 
+                    false
+                ); 
             }else{
                 initialObject[propertyName] = newValue;
             }
@@ -67,9 +73,22 @@
                 <Row>
                     <Col xs={4}>
                         <form>
-                            <Input type="text" placeholder="Namn och efternamn" onChange={this.handleChange.bind(this, 'newCoworker.fullname')}/>
-                            <Input type="text" placeholder="Title" onChange={this.handleChange.bind(this, 'newCoworker.title')}/>
-                        <ButtonInput bsStyle="success" className="pull-right" onClick={this.createCoworker} value="Lägg till" />
+                            <Input 
+                                type="text" 
+                                placeholder="Namn och efternamn" 
+                                onChange={this.handleChange.bind(this, 'newCoworker.fullname')}
+                            />
+                            <Input 
+                                type="text" 
+                                placeholder="Title" 
+                                onChange={this.handleChange.bind(this, 'newCoworker.title')}
+                            />
+                            <ButtonInput 
+                               bsStyle="success" 
+                               className="pull-right" 
+                               onClick={this.createCoworker} 
+                               value="Lägg till" 
+                            />
                         </form>
                     </Col>
                 </Row>
