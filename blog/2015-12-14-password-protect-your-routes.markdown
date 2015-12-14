@@ -1,6 +1,6 @@
 ##Password protect your routes with React-Router
 
-Don't want everyone to see your very secret page? Try setting onEnter on your routes. Like this (remember to look at the comments):
+Don't want everyone to see your very secret page? Basically all you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. Like this (remember to look at the comments):
 
 ```javascript
     /*global require*/
@@ -40,11 +40,9 @@ Don't want everyone to see your very secret page? Try setting onEnter on your ro
     })();
 ```
 
-Basically all you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. 
-
 If you have sharp eyes (swinglish for the win) you might have seen that we use replaceState instead of history.pushState(). history.replaceState() operates exactly like history.pushState() except that replaceState() modifies the current history entry instead of creating a new one ([source](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_replaceState()_method)). 
 
-If you have even sharper vision you might even have spotted that we call replaceState with an object as the first parameter. This is actually so that we can redirect the user to the page she was entering before being redirected to the login page after she's logged in.
+If you have even sharper vision you might even have spotted that we call replaceState with an object as the first parameter. This is actually so that we can redirect the user to the page she was trying to visit before being redirected to the login page after she's logged in.
 
 Let's pretend that we've authenticated the user in another function. This is how you would redirect her back to the page she wanted to visit in the first place. In this example the 'workplaces/new' page.
 
