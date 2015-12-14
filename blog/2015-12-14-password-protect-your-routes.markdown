@@ -56,6 +56,6 @@ Let's pretend that we've authenticated the user in another function. This is how
         this.props.history.pushState(null, this.props.location.state.nextPathname);
     }else{
         // The user didn't try to reach a password protected page before logging in. Go to the default welcome page.
-        this.props.history.pushState(null, '/somedefaultloginpage');
+        this.props.history.pushState(null, '/somedefaultwelcomepage');
     }
 ```
