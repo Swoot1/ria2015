@@ -15,7 +15,6 @@
         ButtonInput = require('react-bootstrap/lib/ButtonInput'),
         WorkplaceInfo = require('./workplaceInfo'),
         Map = require('./map'),
-        Authentication = require('./Authentication'),
         Workplaces = React.createClass({
         
         mixins: [Navigation],
@@ -41,7 +40,6 @@
             
         componentWillUnMount: function(){
             workplacesReference.off();
-            coworkersReference.off();
         },
             
         setSelectedWorkplace:function(index){
@@ -79,11 +77,6 @@
             
             return(
                 <div>
-                    <Row>
-                        <Col xs={12}>
-                           <Authentication />
-                        </Col>
-                    </Row>
                     <Row>
                         <Col xs={3}>
                             <ul>{workplacesHTML}</ul>

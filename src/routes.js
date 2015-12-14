@@ -11,19 +11,28 @@
         Workplaces = require('./components/workplaces'),
         Workplace = require('./components/workplace'),
         WorkplaceCreate = require('./components/workplaceCreate'),
-        CoworkerCreate = require('./components/coworkerCreate');
+        AuthenticationChecker = require('./authenticationChecker.js'),
+        CoworkerCreate = require('./components/coworkerCreate'),
+        Login = require('./components/login');
         
+    
+    function requireAuth(nextState, replaceState) {
+      if (!AuthenticationChecker.isUserAuthenticated()){
+        replaceState({ nextPathname: nextState.location.pathname }, '/login')  
+      }
+    }
     module.exports = (
         <Route path="/" component={Wrapper}>
+            <Route path="login" component={Login} />
             <Route path="workplaces">
                 <IndexRoute component={Workplaces} />
-                <Route path="new">
+                <Route path="new" onEnter={requireAuth}>
                     <IndexRoute component={WorkplaceCreate} />
                 </Route>
                 <Route path=":workplaceId">
                     <IndexRoute component={Workplace} />
                     <Route path="coworkers">
-                        <Route path="new" component={CoworkerCreate} />
+                        <Route path="new" component={CoworkerCreate} onEnter={requireAuth} />
                     </Route>
                 </Route>
             </Route>
