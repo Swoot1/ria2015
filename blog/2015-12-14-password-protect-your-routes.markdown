@@ -1,6 +1,6 @@
 ##Password protect your routes with React-Router
 
-Don't want everyone to see your very secret page? Basically all you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. Like this (remember to look at the comments):
+Don't want everyone to see your very secret page? All you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. Like this (remember to look at the comments):
 
 ```javascript
     /*global require*/
