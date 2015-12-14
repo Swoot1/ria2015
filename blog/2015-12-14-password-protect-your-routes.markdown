@@ -31,7 +31,8 @@ Don't want everyone to see your very secret page? All you need is to set an onEn
                 <Route path="login" component={Login} />
                 <Route path="workplaces">
                     <IndexRoute component={Workplaces} />
-                    <Route path="new" onEnter={requireAuth}> // Call requireAuth before redirecting the user to this page!
+                    // Call requireAuth before redirecting the user to this page!
+                    <Route path="new" onEnter={requireAuth}>
                         <IndexRoute component={WorkplaceCreate} />
                     </Route>
                 </Route>
