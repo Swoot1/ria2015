@@ -59,3 +59,5 @@ Let's pretend that we've authenticated the user in another function. This is how
         this.props.history.pushState(null, '/somedefaultwelcomepage');
     }
 ```
+
+Now that you've read all of my blog post you can read the much better example where I got my "inspiration" from [here](https://github.com/rackt/react-router/blob/master/examples/auth-flow/app.js#L117).
