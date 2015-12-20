@@ -1,17 +1,15 @@
-(function(){
-    
+(function () {
     'use strict';
-    
-    var Firebase = require('firebase'),
-        cowotrack = new Firebase('https://cowotrack.firebaseio.com'),
-        React = require('react');
-        
-    module.exports= {isUserAuthenticated: isUserAuthenticated};
-    
-    function isUserAuthenticated(){
+
+    var Firebase = require('firebase');
+    var cowotrack = new Firebase('https://cowotrack.firebaseio.com');
+
+    module.exports = {
+        isUserAuthenticated: isUserAuthenticated
+    };
+
+    function isUserAuthenticated() {
         var authData = cowotrack.getAuth();
-        
-        return authData !== null ? true : false;
+        return authData !== null;
     }
-    
 })();

@@ -1,0 +1,11 @@
+{
+    "bb.beautify.onSave": true,
+    "path": {
+        "node_modules/**": {
+            "bb.beautify.onSave": false
+        },
+        "dist/**": {
+            "bb.beautify.onSave": false
+        }
+    }
+}

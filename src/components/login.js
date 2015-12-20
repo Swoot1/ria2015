@@ -1,49 +1,62 @@
 /*global require*/
 
-(function(){
-    
+(function() {
     'use strict';
-    
-    var React = require('react'),
-        Firebase = require('firebase'),
-        cowotrack = new Firebase('https://cowotrack.firebaseio.com'),
-        Navigation = require('react-router').Navigation,
-        Login = React.createClass({
-        // https://github.com/rackt/react-router/blob/master/examples/auth-flow/app.js#L117    
-        
+
+    var React = require('react');
+    var Firebase = require('firebase');
+    var cowotrack = new Firebase('https://cowotrack.firebaseio.com');
+    var Navigation = require('react-router').Navigation;
+    var Login = React.createClass({
+        displayName: 'Login',
+
+        propTypes: {
+            history: React.PropTypes.shape({
+                pushState: React.PropTypes.func
+            }),
+            location: React.PropTypes.shape({
+                state: React.PropTypes.shape({
+                    nextPathname: React.PropTypes.string
+                })
+            })
+        },
+
         mixins: [Navigation],
-            
-        getInitialState: function(){
+
+        getInitialState: function() {
             return {
                 error: false
             };
         },
 
-        authenticateWithOAuthPopUp:function() {
-            cowotrack.authWithOAuthPopup("github", function(error, authData) {
-              if (error) {
-                this.setState({error: true});
-              } else {
-                if(this.props.location && this.props.location.state && this.props.location.state.nextPathname){
-                    this.props.history.pushState(null, this.props.location.state.nextPathname);
-                }else{
-                    this.props.history.pushState(null, '/workplaces');
+        handleAuthenticateWithOAuthPopUp: function() {
+            cowotrack.authWithOAuthPopup('github', function(error, authData) {
+                if (error) {
+                    this.setState({
+                        error: true
+                    });
+                } else {
+                    if (this.props.location && this.props.location.state && this.props.location.state.nextPathname) {
+                        this.props.history.pushState(null, this.props.location.state.nextPathname);
+                    } else {
+                        this.props.history.pushState(null, '/workplaces');
+                    }
                 }
-              }
             }.bind(this));
         },
-        
-        render: function(){
-            return(
+
+        render: function() {
+            return (
                 <div>
-                    <input type="button" onClick={this.authenticateWithOAuthPopUp} value="Logga in med Github"/>
-                    {this.state.error ? <p>Något blev fel med din inloggning. Försök igen.</p> : <p></p>}
-                </div>
-            );    
+                    <input
+                        onClick = {this.handleAuthenticateWithOAuthPopUp}
+                        type = "button"
+                        value = "Logga in med Github" />
+                    {this.state.error ? <p> {'Något blev fel med din inloggning. Försök igen.'}</p> : <p></p >}
+                </ div>
+            );
         }
     });
 
     module.exports = Login;
 }());
-
-

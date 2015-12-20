@@ -1,38 +1,48 @@
 /*global require*/
 
-(function(){
-    
+(function() {
     'use strict';
-    
-    var React = require('react'),
-        Firebase = require('firebase'),
-        cowotrack = new Firebase('https://cowotrack.firebaseio.com'),
-        Navigation = require('react-router').Navigation,
-        Logout = React.createClass({
-        
+
+    var React = require('react');
+    var Firebase = require('firebase');
+    var cowotrack = new Firebase('https://cowotrack.firebaseio.com');
+    var Navigation = require('react-router').Navigation;
+    var Logout = React.createClass({
+
+        displayName: 'Logout',
+
+        propTypes: {
+            history: React.PropTypes.shape({
+                pushState: React.PropTypes.func
+            })
+        },
+
         mixins: [Navigation],
-            
-        getInitialState: function(){
+
+        getInitialState: function() {
             return {
                 error: false
             };
         },
 
-        logout:function() {
+        handleLogout: function() {
             cowotrack.unauth();
             this.props.history.pushState(null, '/workplaces');
         },
-        
-        render: function(){
-            return(
+
+        render: function() {
+            return (
                 <div>
-                    <input type="button" onClick={this.logout} value="Logga ut"/>
+                    <input
+                        onClick = {
+                            this.handleLogout
+                        }
+                        type = "button"
+                        value = "Logga ut" />
                 </div>
-            );    
+            );
         }
     });
 
     module.exports = Logout;
 }());
-
-

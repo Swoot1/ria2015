@@ -1,49 +1,62 @@
-(function(){
+(function() {
     'use strict';
-    
-    var React = require('react'),
-        AuthenticationChecker = require('../authenticationChecker'),
-        Link = require('react-router').Link,
-        Login = require('./login'),
-        Logout = require('./logout'),
-        cowotrack = new Firebase('https://cowotrack.firebaseio.com'),
-        Wrapper = React.createClass({
-        
-        
-        getInitialState:function(){
+
+    var React = require('react');
+    var AuthenticationChecker = require('../authenticationChecker');
+    var Login = require('./login');
+    var Logout = require('./logout');
+    var Firebase = require('firebase');
+    var cowotrack = new Firebase('https://cowotrack.firebaseio.com');
+    var Wrapper = React.createClass({
+
+        displayName: 'Wrapper',
+
+        propTypes: {
+            children: React.PropTypes.object,
+            history: React.PropTypes.object,
+            location: React.PropTypes.object
+        },
+
+        getInitialState: function() {
             return {
                 isUserLoggedIn: AuthenticationChecker.isUserAuthenticated()
             }
         },
-            
-        updateAuthorization(loggedInUser) {
-            this.setState({
-              isUserLoggedIn: loggedInUser !== null
-            })
-        },
-            
+
         componentWillMount() {
             cowotrack.onAuth(this.updateAuthorization);
         },
 
+        updateAuthorization(loggedInUser) {
+            this.setState({
+                isUserLoggedIn: loggedInUser !== null
+            })
+        },
+
         render: function() {
             return (
-                <div className="wrapper" >
+                <div className = "wrapper">
                     <ul>
-                        <li>
-                            {this.state.isUserLoggedIn ? (
-                            <Logout history={this.props.history} />
-                            ) : (
-                            <Login history={this.props.history} location={this.props.location} />
-                            )}
+                        <li> {
+                                this.state.isUserLoggedIn ? (
+                                    <Logout
+                                        history = {
+                                                this.props.history
+                                            }/>) : (<Login
+                                                history = {
+                                                        this.props.history
+                                                    }
+                                                location = {
+                                                        this.props.location
+                                                    }/>)
+                            }
                         </li>
-                    </ul>
-                    {this.props.children}
-                </div>
+                    < /ul> {
+                    this.props.children
+                } < /div>
             );
         }
     });
 
     module.exports = Wrapper;
 })();
-

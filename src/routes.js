@@ -1,41 +1,67 @@
 /*global require*/
 
-(function(){
-    
+(function() {
     'use strict';
-    
-    var React = require('react'),
-        Route = require('react-router').Route,
-        Wrapper = require('./components/wrapper'),
-        IndexRoute = require('react-router').IndexRoute,
-        Workplaces = require('./components/workplaces'),
-        Workplace = require('./components/workplace'),
-        WorkplaceCreate = require('./components/workplaceCreate'),
-        AuthenticationChecker = require('./authenticationChecker.js'),
-        CoworkerCreate = require('./components/coworkerCreate'),
-        Login = require('./components/login');
-        
-    
+
+    var React = require('react');
+    var Route = require('react-router').Route;
+    var Wrapper = require('./components/wrapper');
+    var IndexRoute = require('react-router').IndexRoute;
+    var Workplaces = require('./components/workplaces');
+    var Workplace = require('./components/workplace');
+    var WorkplaceCreate = require('./components/workplaceCreate');
+    var AuthenticationChecker = require('./authenticationChecker.js');
+    var CoworkerCreate = require('./components/coworkerCreate');
+    var Login = require('./components/login');
+
     function requireAuth(nextState, replaceState) {
-      if (!AuthenticationChecker.isUserAuthenticated()){
-        replaceState({ nextPathname: nextState.location.pathname }, '/login')  
-      }
+        if (!AuthenticationChecker.isUserAuthenticated()) {
+            replaceState({
+                nextPathname: nextState.location.pathname
+            }, '/login')
+        }
     }
     module.exports = (
-        <Route path="/" component={Wrapper}>
-            <Route path="login" component={Login} />
-            <Route path="workplaces">
-                <IndexRoute component={Workplaces} />
-                <Route path="new" onEnter={requireAuth}>
-                    <IndexRoute component={WorkplaceCreate} />
+            <Route
+                component = {
+                    Wrapper
+                }
+                path = "/">
+                <Route
+                    component = {
+                        Login
+                    }
+                    path = "login"/>
+                <Route path = "workplaces">
+                    <IndexRoute
+                        component = {
+                            Workplaces
+                        }/>
+                    <Route
+                        onEnter = {
+                            requireAuth
+                        }
+                        path = "new">
+                        <IndexRoute component = {
+                            WorkplaceCreate
+                        }/>
                 </Route>
-                <Route path=":workplaceId">
-                    <IndexRoute component={Workplace} />
-                    <Route path="coworkers">
-                        <Route path="new" component={CoworkerCreate} onEnter={requireAuth} />
+                <Route path = ":workplaceId" >
+                    <IndexRoute component = {
+                        Workplace
+                    }/>
+                    <Route path = "coworkers" >
+                        <Route
+                            component = {
+                                CoworkerCreate
+                            }
+                            onEnter = {
+                                requireAuth
+                            }
+                            path = "new"/>
                     </Route>
                 </Route>
             </Route>
-        </Route>
+            </Route>
     );
 })();

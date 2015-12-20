@@ -1,0 +1,17 @@
+# Before running our tests Travis will execute 'npm install' to install your project's dependencies.
+
+# Choose node_js to test JavaScript when you're using node package manager.
+language: node_js
+
+# Define what version of node you want to use.
+node_js:
+  - "4.1"
+
+# Tell Travis to only examine our gh-pages branch.
+branches:
+  only:
+    - gh-pages
+    
+# Tell Travis what script to run in our package.json. If not defined 'test' will be used. I'm using test.
+#script: nameDefinedAsScriptsPropertyInPackageJSON
+    
