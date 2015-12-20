@@ -1,6 +1,6 @@
 ##Password protect your routes with React-Router
 
-Don't want everyone to see your very secret page? Basically all you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. Like this (remember to look at the comments):
+Don't want everyone to see your very secret page? All you need is to set an onEnter function on your route that calls a function that checks if the user is authenticated. Like this (remember to look at the comments):
 
 ```javascript
     /*global require*/
@@ -31,7 +31,8 @@ Don't want everyone to see your very secret page? Basically all you need is to s
                 <Route path="login" component={Login} />
                 <Route path="workplaces">
                     <IndexRoute component={Workplaces} />
-                    <Route path="new" onEnter={requireAuth}> // Call requireAuth before redirecting the user to this page!
+                    // Call requireAuth before redirecting the user to this page!
+                    <Route path="new" onEnter={requireAuth}>
                         <IndexRoute component={WorkplaceCreate} />
                     </Route>
                 </Route>
@@ -55,6 +56,8 @@ Let's pretend that we've authenticated the user in another function. This is how
         this.props.history.pushState(null, this.props.location.state.nextPathname);
     }else{
         // The user didn't try to reach a password protected page before logging in. Go to the default welcome page.
-        this.props.history.pushState(null, '/somedefaultloginpage');
+        this.props.history.pushState(null, '/somedefaultwelcomepage');
     }
 ```
+
+Now that you've read all of my blog post you can read the much better example where I got my "inspiration" from [here](https://github.com/rackt/react-router/blob/master/examples/auth-flow/app.js#L117).
