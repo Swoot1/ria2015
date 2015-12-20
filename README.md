@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Swoot1/ria2015.svg?branch=gh-pages)](https://travis-ci.org/Swoot1/ria2015)
 # Co-worker Tracker
 See where your co-workers are located.
 
