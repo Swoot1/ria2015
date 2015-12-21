@@ -1,0 +1,40 @@
+##Why you should use a linter and some other stuff
+
+###Jshint, jslint, eslint.. a beloved child has many names but what are they?
+Think of a linter/hinter as a spell check for your code except it checks for syntax errors, like double semicolon, missing brackets, number of spaces in a tab and other code conventions. 
+
+You can set up your code editor to automatically highlight errors or run a linter with your build tool. 
+
+###Why you need it
+We'll you kinda don't. It's like the spell checker in your smartphone; you don't need that either but it's darn god too hawe. 
+
+The linter is particulary useful when you're working in a team or you're receiving pull requests on your repository. Imagine if you and your friend uses completely different coding styles and are reformatting entire files as you code. That could lead to merge conflicts on white spaces (depending on your settings). Meaning that you would have a merge conflict every time you've been working in the same file at the same time. Such fun! 
+
+Staaaaph, that's not fun!
+
+Not at all really.
+
+I've been there. It was white-space hell.
+
+Well, with a linter like eslint (or jslint or jshint) you can set up rules for whitespaces (if you can agree on how many to use) and other rules and you can, depending if your repository supports it, set up rules that don't let through pull requests or commits that breaks the lint check.
+
+People that wants to contribute to your awesome repo no longer have to guess your coding style. They can just read them from a file and set up their editors to format their files accordingly.
+
+##Some thoughts on continues integration
+If you want to be the coolest cat on the street (of course you want to) you can use continues integration. Meaning that when the code gets pushed to your repo it follows a chain usually consisting of different types of tests and checks before it, if you're brave enough, gets pushed to production without no-one even throwing it a goat eye.
+
+Now imagine you're a cool cat and you've got all your CI set up to push aaaaall the waaaay to production. Ding the frontend tests passes, ding the soap tests passes, ding the backend tests passes, ding your code's in production. But wait what? The page is white!
+
+Looks like a syntax error snuck in. What can we do to avoid that in the future...? Hmm.... What... What..
+
+And yes, I almost forgot. The readability increases a lot with a linter.
+
+End of reasons.
+
+If you haven’t used a linter before it will look like hell at first. One option is to add one rule at a time so you won’t get that sad and not get 1000 linting errors at once.
+
+###Get started with ESlint!
+
+You’ll need [eslint](https://www.npmjs.com/package/eslint) and [this](https://www.npmjs.com/package/eslint-plugin-react) if you're using react.
+
+If you're using Brackets as your editor [this plugin](https://www.npmjs.com/package/brackets-eslint) should come in handy. If you're using Sublime you can check out [Mattias blog](http://mattias.rocks/setting-up-sublime/) for a nice Sublime plugin.
