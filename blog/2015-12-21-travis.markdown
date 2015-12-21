@@ -5,7 +5,7 @@ I wanted to write a long blog post on how I implemented Travis but that would be
 ###What is Travis?
 Travis is a build tool like Jenkins or Atlassian Bamboo and is used for running tests, linting and deploying your code automatically when you push your code to your repo.
 
-###How do I get started?
+###How to get started?
 Start an account and go through the [getting started page](https://travis-ci.org/getting_started) at [travis-ci.org](https://travis-ci.org). The travis-ci.org is free for open source. Get a paid account at travis-ci.com if you want to be private and not write open source.
 
 ###I did it this way
