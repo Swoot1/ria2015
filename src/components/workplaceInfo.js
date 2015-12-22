@@ -43,7 +43,7 @@
                     <ul> {
                             _.map(this.props.workplace.coworkers, function(coworker, index) {
                                 return (<li key = {index}> {coworker.fullname}
-                                        {'jobbar som'} {
+                                        {' jobbar som'} {
                                     coworker.title
                                 } < /li>);
                             })
