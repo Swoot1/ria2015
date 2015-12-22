@@ -20,8 +20,8 @@ Well, with a linter like eslint (or jslint or jshint) you can set up rules for w
 
 People that wants to contribute to your awesome repo no longer have to guess your coding style. They can just read them from a file and set up their editors to format their files accordingly.
 
-##Some thoughts on continues integration
-If you want to be the coolest cat on the street (of course you want to) you can use continues integration. Meaning that when the code gets pushed to your repo it follows a chain usually consisting of different types of tests and checks before it, if you're brave enough, gets pushed to production without no-one even throwing it a goat eye.
+##Some thoughts on continuous integration
+If you want to be the coolest cat on the street (of course you want to) you can use continuous integration. Meaning that when the code gets pushed to your repo it follows a chain usually consisting of different types of tests and checks before it, if you're brave enough, gets pushed to production without no-one even throwing it a goat eye.
 
 Now imagine you're a cool cat and you've got all your CI set up to push aaaaall the waaaay to production. Ding the frontend tests passes, ding the soap tests passes, ding the backend tests passes, ding your code's in production. But wait what? The page is white!
 
