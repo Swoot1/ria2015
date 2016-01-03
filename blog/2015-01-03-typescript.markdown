@@ -7,6 +7,7 @@ It's something you should use if you don't like JavaScript.
 TypeScript is a programming language where you can write regular JavaScript but also use fancy stuff such as classes, modules, interfaces, typed variables and inheritance. 
 
 \- But wait what? Can you run this in a browser? 
+
 \- No you can't. 
 
 This is where the good part comes in. TypeScript can and should be compiled into regular JavaScript.
