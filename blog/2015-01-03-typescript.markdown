@@ -16,6 +16,8 @@ This is where the good part comes in. TypeScript can and should be compiled into
 
 I was thinking about doing TypeScript as my final project but I realized that TypeScript isn't that complicated. You can actually learn most of it in an evening. 
 
-If you go through the [tutorial](http://www.typescriptlang.org/Tutorial) on the TypeScript page and check out their [examples](http://www.typescriptlang.org/Playground) your all set and practically a TypeScript ninja. I really encourage you to do it.
+If you go through the [tutorial](http://www.typescriptlang.org/Tutorial) on the TypeScript page and check out their [examples](http://www.typescriptlang.org/Playground) your all set and practically a TypeScript ninja. 
+
+I really encourage you to do it.
 
 If you want to listen to the example on their homepage with good enough english you can check out [my recording on youtube](https://youtu.be/gSLJpP5z1Jg).
