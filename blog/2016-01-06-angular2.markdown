@@ -1,0 +1,12 @@
+##Angular2
+
+I've plowed through the [super hero example app](https://angular.io/docs/ts/latest/tutorial/) at the Angular 2 docs. Here are my thoughts so far:
+
+- It's rather ugly; the html syntax. ng-for has been replaced with *ngFor, ng-model with [(ngModel)], ng-click with (click), ng-src with [src] and other similar changes.
+- It's easier to learn and remember than Angular 1, less Angular centric and more JavaScript General centric. I.e. out of controllers, services, factories and directives the only thing that remains is services which are basic ES classes.
+- Using components and defining inputs reminds me of React.
+- I still have a hard time writing HTML and JavaScript in the same file without compulsive thoughts. Angular 2 writes js, html AND css in the same file.. I remember this being said in the university being one of the worst things you could do. Well, things changes. Life goes on.
+- I don't get why I need to remember to only add the services in the providers property for the root element and not the child element. Why not use a singleton all around and be done with it? I never change the state of my services anyway.
+- I do not look forward to updating the Angular 1 projects I'm working in.
+
+Overall I think Angular 2 is going to be really good.
