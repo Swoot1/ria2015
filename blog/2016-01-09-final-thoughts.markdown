@@ -6,6 +6,6 @@ Somehow I don't think that the Slack channel worked. Most of the posts in it is 
 
 I liked it when David smashed my pr which made me rethink my coding decisions.
 
-I'm pleased with my own effort and I've learned a lot e.g. ES6, Browserify, Webpack, TypeScript, Angular 2, React, React-Router.
+I'm pleased with my own effort and I've learned a lot e.g. ES6, Browserify, Webpack, TypeScript, Angular 2, React, React-Router, Firebase.
 
 I liked the setup with the guild page which made it "easy" to get going with pr:s and react. I would have preferred if the demo-app was part of the guild repo since I was to lazy to change between the projects in my IDE.
